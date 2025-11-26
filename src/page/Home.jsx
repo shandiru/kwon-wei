@@ -6,6 +6,7 @@ import Review from "../components/Review";
 import Contact from "../components/Contact";
 import WhyChooseUs from "../components/WhyChooseUs";
 import ImageSlider from "../components/ImageSlider"
+import VenueSection from "../components/VenueSection"
 const Home = () => {
     return (
         <div>
@@ -14,7 +15,7 @@ const Home = () => {
             <About />
             <ImageSlider />
             <Review />
-
+             <VenueSection />
             <WhyChooseUs />
             <Contact />
         </div>
