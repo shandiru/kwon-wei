@@ -8,6 +8,7 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import GDPRBanner from "../src/components/GDPRBanner"
+
 function App() {
   return (
     <Router>
