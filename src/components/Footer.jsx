@@ -18,7 +18,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3">
               <span className="text-2xl font-bold gradient-blue">
-                AF-MOK <span className="text-gray-400">PERFORMANCE</span>
+                kwon Wei
               </span>
             </div>
             <p className="text-gray-400 mb-4 mt-2">
@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="flex space-x-4">
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/share/16eb5kcuGU/?mibextid=wwXIfr"
+                //href="https://www.facebook.com/share/16eb5kcuGU/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -42,7 +42,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/afmokperformance/"
+               // href="https://www.instagram.com/afmokperformance/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -55,7 +55,7 @@ export default function Footer() {
 
               {/* TikTok */}
               <a
-                href="https://www.tiktok.com/@afmok.performance"
+                //href="https://www.tiktok.com/@afmok.performance"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
@@ -76,26 +76,26 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold mb-4 gradient-blue">Services</h3>
+            <h3 className="font-bold mb-4 gradient-blue">Quick Link</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
-                  Performance Software
+                  Home
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
-                  Economy Tuning
+                  About
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
-                  DPF Solutions
+                 Venues
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
-                  EGR &amp; ADBLUE Delete
+                  Contact
                 </a>
               </li>
               <li>
@@ -115,7 +115,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4 gradient-blue">Contact Info</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>AF-MOK Performance</li>
+              <li>kwon Wei</li>
               <li>
                 <a
                   href={mapsUrl}
@@ -147,7 +147,7 @@ export default function Footer() {
                   href="mailto:afmok.performance@outlook.com"
                   className="hover:text-white transition-colors break-all"
                 >
-                  afmok.performance@outlook.com
+                  Benihana Main@outlook.com
                 </a>
               </li>
             </ul>

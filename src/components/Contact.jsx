@@ -9,7 +9,7 @@ export default function Contact() {
         {/* LEFT IMAGE HERO */}
         <div
           className="relative w-full h-80 md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden flex items-center justify-center bg-cover bg-center"
-          style={{ backgroundImage: "url('/your-image.jpg')" }} // replace with your image
+          style={{ backgroundImage: "url('/c1.avif')" }} // replace with your image
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-serif text-white text-center">
