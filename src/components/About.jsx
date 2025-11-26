@@ -1,144 +1,132 @@
-'use client'
-
-import React from 'react'
-
-export default function About() {
-  const images = [
-    '/1.jpeg', '/2.jpeg', '/3.jpeg', '/4.jpeg',
-    '/5.jpeg', '/6.jpeg', '/7.jpeg', '/8.jpeg'
-  ]
-
-  const scrollToContact = () => {
-    const el = document.getElementById('contact')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const n = images.length || 1
-  const secondsPerImage = 10
-  const gapPx = 16
-  const EASING = 'linear'
-
+export default function AboutUs() {
   return (
-    <section id="about" className="py-20 bg-black text-white">
-      <div className="container mx-auto px-4 md:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ABOUT{' '}
-              <span className="gradient-text">
-                AF-MOK
-              </span>
-            </h2>
+    <section className="relative py-20 bg-[#F7F7F2] overflow-hidden">
 
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              At{' '}
-              <span className="gradient-text font-semibold">
-                AF-MOK PERFORMANCE
-              </span>
-              , we're passionate about helping you get the most out of your vehicle.
-              Our team of experts specializes in providing high-quality performance
-              products, software solutions, and services for cars and LCV.
-            </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              We offer a comprehensive range of solutions tailored to your vehicle&apos;s
-              specific needs, including economy software, performance software, DPF,
-              ADBLUE, and EGR solutions.
-            </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              With our user-friendly interfaces, exceptional customer service,
-              and customizable options, you can trust us to deliver results.
-            </p>
+      {/* Side Decorative Images */}
+      <img
+        src="https://www.benihanainternational.com/wp-content/themes/grilla/img/left-letters.svg"
+        alt=""
+        className="absolute left-0 top-1/2 -translate-y-1/2 opacity-30 pointer-events-none hidden md:block"
+      />
+      <img
+        src="https://www.benihanainternational.com/wp-content/themes/grilla/img/right-letters.svg"
+        alt=""
+        className="absolute right-0 top-1/2 -translate-y-1/2 opacity-30 pointer-events-none hidden md:block"
+      />
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">1000+</div>
-                <div className="text-gray-400 text-sm">Vehicles Tuned</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">10+</div>
-                <div className="text-gray-400 text-sm">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold gradient-text">98%</div>
-                <div className="text-gray-400 text-sm">Client Satisfaction</div>
-              </div>
-            </div>
+      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
 
-            <button
-              type="button"
-              onClick={scrollToContact}
-              className="bg-gradient-to-r from-[#00E5FF] via-white to-[#FF2B2B] text-black hover:opacity-90 transition px-6 py-3 rounded-md font-semibold"
-            >
-              Contact Us
-            </button>
-          </div>
+        {/* Flower Icon */}
+        <img
+          src="https://www.benihanainternational.com/wp-content/uploads/2025/07/flower.svg"
+          alt=""
+          className="mx-auto mb-10 w-24 md:w-32"
+        />
 
-          {/* Right: Auto-scroll gallery */}
-          <div
-            className="relative overflow-hidden rounded-2xl shadow-lg group"
-            style={{ '--gap': `${gapPx}px` }}
+        {/* Title */}
+        <h2 className="text-3xl md:text-[32px] font-extrabold leading-snug text-[#02130E] uppercase tracking-wide">
+          Two Benihana Restaurants in London –
+        </h2>
+
+        {/* Description */}
+        <div className="mt-6 space-y-5 text-base md:text-lg text-[#333] max-w-2xl mx-auto leading-relaxed">
+          <p>
+            At Benihana, every meal is more than just dining — it’s a show.
+            With two London locations in Chelsea and Covent Garden, we bring
+            world-famous Japanese teppanyaki theatre to your table.
+          </p>
+          <p>
+            Whether you’re celebrating a birthday, marking an anniversary,
+            hosting a business dinner, or simply gathering with friends,
+            Benihana sets the stage for unforgettable moments.
+          </p>
+          <p>
+            From hibachi steak to sushi and cocktails, choose your London
+            Benihana and let the celebration begin.
+          </p>
+        </div>
+
+        {/* Cards Section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+
+          {/* Chelsea Card */}
+          <a
+            href="/locations/chelsea"
+            className="group relative rounded-[32px] overflow-hidden shadow-lg transition-all duration-500"
           >
-            <div
-              className="relative h-[20rem] md:h-[24rem] lg:h-[26rem]"
-              style={{ margin: '0 calc(var(--gap) * -1)' }}
-            >
-              <div
-                className="flex h-full will-change-transform"
-                style={{
-                  '--n': n,
-                  '--dur': `${n * secondsPerImage}s`,
-                  animation: `aboutscroll var(--dur) ${EASING} infinite`,
-                }}
-              >
-                {[...images, ...images].map((src, i) => (
-                  <div
-                    key={i}
-                    className="w-full flex-[0_0_100%] h-full"
-                    style={{ boxSizing: 'border-box', padding: '0 var(--gap)' }}
-                  >
-                    <div className="h-full w-full overflow-hidden rounded-xl bg-black">
-                      <img
-                        src={src}
-                        alt={`Workshop ${i + 1}`}
-                        className="block h-full w-full object-contain"
-                        loading="lazy"
-                        decoding="async"
-                        draggable={false}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* Image */}
+            <img
+              src="https://www.benihanainternational.com/wp-content/uploads/2025/07/Chelsea-Hero-Shot.jpg"
+              alt="Chelsea"
+              className="w-full h-96 object-cover group-hover:scale-105 transition-all duration-700"
+            />
+
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300"></div>
+
+            {/* Bottom gradient */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+            {/* Text */}
+            <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+
+              {/* TOP TITLE (absolute & centered) */}
+              <h3 className="
+                text-2xl md:text-3xl 
+                uppercase font-extrabold tracking-wide 
+                absolute top-6 left-1/2 -translate-x-1/2
+              ">
+                Chelsea
+              </h3>
+
+              <p className="opacity-90 text-sm md:text-base mt-auto">
+                West London
+              </p>
+
+              <span className="mt-3 inline-block bg-[#E41E26] text-white px-6 py-2 text-xs md:text-sm font-semibold tracking-widest rounded-full">
+                Explore Chelsea
+              </span>
             </div>
+          </a>
 
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-24 bg-gradient-to-r from-black to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-24 bg-gradient-to-l from-black to-transparent" />
+          {/* Covent Garden Card */}
+          <a
+            href="/locations/covent-garden"
+            className="group relative rounded-[32px] overflow-hidden shadow-lg transition-all duration-500"
+          >
+            <img
+              src="https://www.benihanainternational.com/wp-content/uploads/2025/07/CG-Ground-Floor.jpg"
+              alt="Covent Garden"
+              className="w-full h-96 object-cover group-hover:scale-105 transition-all duration-700"
+            />
 
-            <style jsx>{`
-              .group:hover div[style*='aboutscroll'] {
-                animation-play-state: paused;
-              }
-              @keyframes aboutscroll {
-                from { transform: translateX(0); }
-                to { transform: translateX(calc(-100% * var(--n))); }
-              }
-            `}</style>
-          </div>
+            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300"></div>
+
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+            <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+
+              {/* TOP TITLE */}
+              <h3 className="
+                text-2xl md:text-3xl
+                uppercase font-extrabold tracking-wide
+                absolute top-6 left-1/2 -translate-x-1/2
+              ">
+                Covent Garden
+              </h3>
+
+              <p className="opacity-90 text-sm md:text-base mt-auto">
+                Central London
+              </p>
+
+              <span className="mt-3 inline-block bg-[#E41E26] text-white px-6 py-2 text-xs md:text-sm font-semibold tracking-widest rounded-full">
+                Covent Garden
+              </span>
+            </div>
+          </a>
+
         </div>
       </div>
-
-      {/* ✅ FIX for iPhone gradient text */}
-      <style jsx global>{`
-        .gradient-text {
-          background: linear-gradient(to right, #00E5FF, #ffffff, #FF2B2B);
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          -webkit-text-fill-color: transparent;
-        }
-      `}</style>
     </section>
-  )
+  );
 }

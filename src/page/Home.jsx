@@ -5,14 +5,16 @@ import About from "../components/About";
 import Review from "../components/Review";
 import Contact from "../components/Contact";
 import WhyChooseUs from "../components/WhyChooseUs";
-
+import ImageSlider from "../components/ImageSlider"
 const Home = () => {
     return (
         <div>
             <Hero />
             <Service />
             <About />
+            <ImageSlider />
             <Review />
+
             <WhyChooseUs />
             <Contact />
         </div>
