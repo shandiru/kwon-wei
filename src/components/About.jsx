@@ -47,30 +47,30 @@ export default function AboutUs() {
         </div>
 
         {/* Cards Section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
 
-          {/* Chelsea Card */}
+         
           <a
             href="/locations/chelsea"
             className="group relative rounded-[32px] overflow-hidden shadow-lg transition-all duration-500"
           >
-            {/* Image */}
+          
             <img
               src="https://www.benihanainternational.com/wp-content/uploads/2025/07/Chelsea-Hero-Shot.jpg"
               alt="Chelsea"
               className="w-full h-96 object-cover group-hover:scale-105 transition-all duration-700"
             />
 
-            {/* Dark overlay */}
+           
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all duration-300"></div>
 
-            {/* Bottom gradient */}
+          
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/70 to-transparent"></div>
 
-            {/* Text */}
+          
             <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
 
-              {/* TOP TITLE (absolute & centered) */}
+           
               <h3 className="
                 text-2xl md:text-3xl 
                 uppercase font-extrabold tracking-wide 
@@ -89,7 +89,7 @@ export default function AboutUs() {
             </div>
           </a>
 
-          {/* Covent Garden Card */}
+         
           <a
             href="/locations/covent-garden"
             className="group relative rounded-[32px] overflow-hidden shadow-lg transition-all duration-500"
@@ -106,7 +106,7 @@ export default function AboutUs() {
 
             <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
 
-              {/* TOP TITLE */}
+            
               <h3 className="
                 text-2xl md:text-3xl
                 uppercase font-extrabold tracking-wide
@@ -125,7 +125,7 @@ export default function AboutUs() {
             </div>
           </a>
 
-        </div>
+        </div> */}
       </div>
     </section>
   );
