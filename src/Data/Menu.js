@@ -848,8 +848,679 @@
     spiceLevel: 0
   }
 
+,
+{
+    name: 'Deep Fried Pork in Peking Sauce',
+    price: '£12.30',
+    description: 'Crispy pork in rich Peking sauce',
+    allergens: ['Eggs', 'Sesame'],
+    category: 'Pork Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Deep Fried Pork in Garlic and Chilli',
+    price: '£12.30',
+    description: 'Crispy pork with garlic and chilli',
+    allergens: ['Eggs', 'Sesame'],
+    category: 'Pork Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Deep Fried Pork Salt and Chilli',
+    price: '£12.30',
+    description: 'Crispy pork with salt and chilli seasoning',
+    allergens: ['Eggs', 'Sesame'],
+    category: 'Pork Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Sweet and Sour Pork Cantonese Style',
+    price: '£12.30',
+    description: 'Pork in Cantonese sweet and sour sauce',
+    allergens: ['Eggs', 'Sesame'],
+    category: 'Pork Dishes',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+   {
+    name: 'House Special Curry',
+    price: '£11.50',
+    description: 'Mix of Chicken, King Prawns and Beef',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame', 'Celery'],
+    category: 'Curry Dishes',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Seafood Curry',
+    price: '£12.50',
+    description: 'Mussels, Squid and King Prawns in curry sauce',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame', 'Celery'],
+    category: 'Curry Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'King Prawn Curry',
+    price: '£11.80',
+    description: 'King prawns in Chinese curry sauce',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame', 'Celery'],
+    category: 'Curry Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Chicken Curry',
+    price: '£10.00',
+    description: 'Chicken in Chinese curry sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame', 'Celery'],
+    category: 'Curry Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Beef Curry',
+    price: '£10.50',
+    description: 'Beef in Chinese curry sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame', 'Celery'],
+    category: 'Curry Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Mixed Vegetable Curry',
+    price: '£9.60',
+    description: 'Mixed vegetables in curry sauce',
+    allergens: ['Gluten', 'Soy', 'Celery'],
+    category: 'Curry Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 2
+  },
+   {
+    name: 'Mixed Vegetables Yuk Sung',
+    price: '£14.00',
+    description: 'Stir fried vegetables served with iceberg lettuce',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Vegetarian Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0,
+    serving: 'for two'
+  },
+  {
+    name: 'Mixed Vegetables and Cashew Nuts',
+    price: '£12.00',
+    description: 'Stir fried vegetables with cashew nuts',
+    allergens: ['Gluten', 'Tree Nuts', 'Soy', 'Celery'],
+    category: 'Vegetarian Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Monk\'s Vegetables',
+    price: '£10.80',
+    description: 'Selection of Chinese Vegetables with Deep Fried Tofu',
+    allergens: ['Gluten', 'Milk', 'Soy', 'Sesame'],
+    category: 'Vegetarian Dishes',
+    popular: true,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Salt and Chilli Tofu',
+    price: '£10.80',
+    description: 'Crispy tofu with salt and chilli seasoning',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Vegetarian Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 2
+  },
+  {
+    name: 'Tofu in Garlic and Chilli',
+    price: '£10.80',
+    description: 'Tofu in spicy garlic sauce',
+    allergens: ['Gluten', 'Soy', 'Crustaceans'],
+    category: 'Vegetarian Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 2
+  },
+  {
+    name: 'Pak Choi in Oyster Sauce',
+    price: '£11.30',
+    description: 'Fresh pak choi in oyster sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
+    category: 'Vegetarian Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Triple Mushroom with Baby Sweet Corn',
+    price: '£11.00',
+    description: 'Chinese Mushroom, Straw Mushroom and White Mushroom',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Vegetarian Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  }
+  ,
+  {
+    name: 'House Special Fried Rice',
+    price: '£14.20',
+    description: 'Egg Fried Rice topped with Chicken, Beef and King Prawns with Mix Vegetables in Oyster Sauce',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mix Seafood Fried Rice',
+    price: '£15.20',
+    description: 'Egg Fried Rice topped with Mussels, King Prawns and Squid with Mix Vegetables in Oyster Sauce',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Cantonese Roast Duck Rice',
+    price: '£13.80',
+    description: 'Served with Chinese Leaf and Boiled Rice, drizzled with Soy Sauce',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Yung Chow Fried Rice',
+    price: '£8.80',
+    description: 'Ham, Chicken, Prawns and Peas Fried Rice',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 0,
+    serving: 'or £13.00 for 2'
+  },
+  {
+    name: 'Chicken Fried Rice',
+    price: '£8.80',
+    description: 'Fried rice with chicken',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Beef Fried Rice',
+    price: '£9.80',
+    description: 'Fried rice with beef',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mushroom Egg Fried Rice',
+    price: '£7.80',
+    description: 'Egg fried rice with mushrooms',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Singapore Fried Rice',
+    price: '£12.50',
+    description: 'Spicy curry flavoured fried rice',
+    allergens: ['Gluten', 'Peanuts', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2,
+    serving: 'for 2'
+  },
+  {
+    name: 'Mixed Vegetables Egg Fried Rice',
+    price: '£11.50',
+    description: 'Egg fried rice with mixed vegetables',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Sesame'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0,
+    serving: 'for 2'
+  },
+  {
+    name: 'Egg Fried Rice',
+    price: '£4.30',
+    description: 'Classic egg fried rice',
+    allergens: ['Gluten', 'Soy', 'Eggs'],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Boiled Rice',
+    price: '£3.80',
+    description: 'Steamed jasmine rice',
+    allergens: [],
+    category: 'Rice Dishes',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  }
+,
+{
+    name: 'House Special Chow Mein',
+    price: '£14.50',
+    description: 'Stir Fried soft Noodles topped with Chicken, Beef and King Prawns with Mix Vegetables in Oyster Sauce',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mix Seafood Chow Mein',
+    price: '£15.70',
+    description: 'Stir Fried soft Noodles topped with Mussels, King Prawns and Squid with Mix Vegetables in Oyster Sauce',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Chicken Chow Mein (Dry)',
+    price: '£10.80',
+    description: 'Stir fried noodles with chicken',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Chicken Chow Mein (Oyster Sauce)',
+    price: '£12.80',
+    description: 'Noodles with chicken in oyster sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Beef Chow Mein (Dry)',
+    price: '£11.50',
+    description: 'Stir fried noodles with beef',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Beef Chow Mein (Oyster Sauce)',
+    price: '£13.50',
+    description: 'Noodles with beef in oyster sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Singapore Noodles',
+    price: '£13.00',
+    description: 'Vermicelli noodles with curry spice',
+    allergens: ['Gluten', 'Peanuts', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Mixed Vegetables Chow Mein (Dry)',
+    price: '£10.30',
+    description: 'Stir fried noodles with vegetables',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mixed Vegetables Chow Mein (Soy Sauce)',
+    price: '£12.00',
+    description: 'Noodles with vegetables in soy sauce',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Beef Satay Udon',
+    price: '£13.80',
+    description: 'Udon noodles with beef in satay sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'King Prawn Udon in Oyster Sauce',
+    price: '£14.50',
+    description: 'Udon noodles with prawns in oyster sauce',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Seafood Udon',
+    price: '£15.80',
+    description: 'Stir Fried Udon with Mussels, King Prawns and Squid with Mix Vegetables in Oyster Sauce',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Stir Fried Soft Noodles',
+    price: '£6.60',
+    description: 'Plain stir fried noodles',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Stir Fried Vermicelli',
+    price: '£6.60',
+    description: 'Plain stir fried rice noodles',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Stir Fried Udon',
+    price: '£7.10',
+    description: 'Plain stir fried udon noodles',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Noodles (Chow Mein)',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
 
+  // Omelettes & Foo Yung
+  {
+    name: 'King Prawn Omelette',
+    price: '£14.00',
+    description: 'Omelette with king prawns, served with chips and peas',
+    allergens: ['Eggs', 'Crustaceans'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Chicken Omelette',
+    price: '£13.00',
+    description: 'Omelette with chicken, served with chips and peas',
+    allergens: ['Eggs'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mushroom Omelette',
+    price: '£12.50',
+    description: 'Omelette with mushrooms, served with chips and peas',
+    allergens: ['Eggs'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Plain Omelette',
+    price: '£12.00',
+    description: 'Plain omelette, served with chips and peas',
+    allergens: ['Eggs'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'King Prawn Foo Yung',
+    price: '£13.50',
+    description: 'Chinese style omelette with prawns',
+    allergens: ['Eggs', 'Crustaceans'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Chicken Foo Yung',
+    price: '£12.50',
+    description: 'Chinese style omelette with chicken',
+    allergens: ['Eggs'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mushroom Foo Yung',
+    price: '£12.00',
+    description: 'Chinese style omelette with mushrooms',
+    allergens: ['Eggs'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Plain Foo Yung',
+    price: '£11.50',
+    description: 'Plain Chinese style omelette',
+    allergens: ['Eggs'],
+    category: 'Omelettes & Foo Yung',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
 
+  // Extras & Sides
+  {
+    name: 'Mushrooms with Oyster Sauce',
+    price: '£7.50',
+    description: 'Stir fried mushrooms in oyster sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Fried Beansprouts',
+    price: '£7.50',
+    description: 'Stir fried fresh beansprouts',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Bamboo Shoots and Water Chestnuts',
+    price: '£7.50',
+    description: 'Stir fried bamboo shoots and water chestnuts',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Fried Onions',
+    price: '£7.50',
+    description: 'Stir fried onions',
+    allergens: [],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mixed Seasonal Vegetables',
+    price: '£9.00',
+    description: 'Selection of fresh seasonal vegetables',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Chips',
+    price: '£4.30',
+    description: 'Golden fried chips',
+    allergens: [],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Salt & Chilli Chips',
+    price: '£6.00',
+    description: 'Chips with salt and chilli seasoning',
+    allergens: [],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 1
+  },
+  {
+    name: 'Bird\'s Nest',
+    price: '£3.50',
+    description: 'Crispy noodle nest',
+    allergens: ['Gluten'],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Prawn Crackers (Small)',
+    price: '£2.80',
+    description: 'Crispy prawn crackers',
+    allergens: ['Crustaceans'],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Prawn Crackers (Large)',
+    price: '£4.60',
+    description: 'Crispy prawn crackers - large portion',
+    allergens: ['Crustaceans'],
+    category: 'Extras & Sides',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+
+  // Dipping Sauces
+  {
+    name: 'Dipping Sauce',
+    price: '£3.00',
+    description: 'House dipping sauce',
+    allergens: [],
+    category: 'Dipping Sauces',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Curry Sauce',
+    price: '£3.20',
+    description: 'Chinese curry sauce',
+    allergens: ['Celery'],
+    category: 'Dipping Sauces',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 1
+  },
+  {
+    name: 'Sweet and Sour Sauce',
+    price: '£3.20',
+    description: 'Classic sweet and sour sauce',
+    allergens: ['Sulphites'],
+    category: 'Dipping Sauces',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Peking Sauce',
+    price: '£3.20',
+    description: 'Rich Peking sauce',
+    allergens: ['Gluten', 'Soy'],
+    category: 'Dipping Sauces',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Black Bean Sauce',
+    price: '£3.20',
+    description: 'Fermented black bean sauce',
+    allergens: ['Gluten', 'Soy', 'Molluscs'],
+    category: 'Dipping Sauces',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  }
 
     ];
   
