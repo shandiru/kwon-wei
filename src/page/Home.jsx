@@ -4,7 +4,7 @@ import Menu from "../components/Menu";
 import About from "../components/About";
 import Review from "../components/Review";
 import Contact from "../components/Contact";
-import WhyChooseUs from "../components/WhyChooseUs";
+import MapSection from "../components/MapSection";
 import ImageSlider from "../components/ImageSlider"
 import VenueSection from "../components/VenueSection"
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
             <ImageSlider />
             <Review />
              <VenueSection />
-            {/* <WhyChooseUs /> */}
+            <MapSection />
             <Contact />
         </div>
     )
