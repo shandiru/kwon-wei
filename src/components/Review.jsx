@@ -2,24 +2,24 @@ import React from "react";
 
 const reviews = [
   {
-    text: `"Oishi never disappoints. The variety on the menu is impressive, and everything I've tried has been delicious. The staff is friendly and attentive, making every visit enjoyable. The spicy tuna roll is a must-try!"`,
-    img: "https://framerusercontent.com/images/Y9KmJAQ4w53hsc4jJojfokLZ7D8.jpg",
-    name: "Michael T.",
+    text: `"Good portion size, good food, and nice atmosphere. I love that this place served mocktails and made it just as fancy as regular cocktails. The dumplings look handmade which was excellent, and the duck was crispy and nice."`,
+    img: "Joelle Carr.png",
+    name: "Joelle Carr",
   },
   {
-    text: `"I've been to many sushi restaurants, but Oishi stands out for its quality and creativity. The Omakase experience was unforgettable. Each piece of sushi was a delight, and the chef's explanations added a special touch."`,
-    img: "https://framerusercontent.com/images/aNEfzolOrmcZPNccFbRZfTzZxwY.jpg",
-    name: "Emily R.",
+    text: `"Amazing food. Great atmosphere. Really friendly staff, they really cant do enough. We went as a party of 7, and they really accommodated us. Decent wine selections & the food is delicious."`,
+    img: "sakalabudhi123.png",
+    name: "sakalabudhi123",
   },
   {
-    text: `"The ambiance at Oishi is fantastic. It's cozy, modern, and the perfect place for a date night or a casual dinner with friends. The dragon roll is my absolute favorite. Service is always top-notch."`,
-    img: "https://framerusercontent.com/images/adA3ca5MJSdYVtT9ZmtqJigs.jpg",
-    name: "Jane A.",
+    text: `"Probably the best dine in Chinese around. Some work colleagues are from China and always want to come back here because of how nice and authentic the food is. I would always recommend to book a table."`,
+    img: "Chris Tilson.png",
+    name: "Chris Tilson",
   },
   {
-    text: `"Oishi has the best sushi in town! The fish is always incredibly fresh, and the presentation is stunning. The chefs are true artists. I can't get enough of their sashimi platter. Highly recommend!"`,
-    img: "https://framerusercontent.com/images/A9RPsEO3tCGkBToytnctlJsNek.jpg",
-    name: "Mark S.",
+    text: `"Really fast service my favourite Chinese place is definitely here! Food was amazing 10 out of 10 very stuffed after. Our favourites were the teriyaki chicken and salt and chilli chips."`,
+    img: "Jasmine Adams.png",
+    name: "Jasmine Adams",
   },
 ];
 
