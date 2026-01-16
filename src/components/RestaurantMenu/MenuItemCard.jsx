@@ -10,16 +10,26 @@ const MenuItemCard = ({ item }) => {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 transition-all duration-300 hover:border-red-500/30 hover:shadow-xl hover:shadow-red-500/10">
-      <div className="p-6">
-        {item.popular && (
-          <div className="absolute flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-neutral-900 px-4 py-1.5 text-xs font-semibold z-10 -top-px -right-px rounded-bl-xl rounded-tr-2xl">
-            <Star className="w-3 h-3 fill-current" />
-            Popular
-          </div>
-        )}
+    /* FIX: Added 'h-full' to make the card fill the grid row height.
+       Added 'flex flex-col' to manage internal vertical spacing.
+    */
+    <div className="group relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 transition-all duration-300 hover:border-red-500/30 hover:shadow-xl hover:shadow-red-500/10 h-full flex flex-col">
+      
+      {/* Popular Badge */}
+      {item.popular && (
+        <div className="absolute flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-neutral-900 px-4 py-1.5 text-xs font-semibold z-10 -top-px -right-px rounded-bl-xl rounded-tr-2xl">
+          <Star className="w-3 h-3 fill-current" />
+          Popular
+        </div>
+      )}
+
+      {/* FIX: Added 'flex-1' and 'flex flex-col' here to ensure the 
+          padding wrapper expands to fill the card.
+      */}
+      <div className="p-6 flex-1 flex flex-col">
         
-        <div className="flex items-start justify-between gap-3 mb-3">
+        {/* Header Section */}
+        <div className="flex items-start justify-between gap-3 mb-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
               <h4 className="font-serif text-xl font-semibold text-white group-hover:text-red-500 transition-colors">
@@ -45,11 +55,22 @@ const MenuItemCard = ({ item }) => {
           </div>
         </div>
         
-        <p className="text-sm text-neutral-400 mb-4 leading-relaxed">{item.description}</p>
+        {/* FIX: Added 'flex-grow'. This takes up all available vertical space, 
+            effectively pushing the allergens div below it to the bottom.
+        */}
+        <p className="text-sm text-neutral-400 mb-6 leading-relaxed flex-grow">
+          {item.description}
+        </p>
         
-        <div className="flex flex-wrap gap-1.5">
+        {/* Bottom Section: Allergens 
+            Added 'mt-auto' as an extra safety to keep it at the bottom.
+        */}
+        <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
           {item.allergens.map(allergen => (
-            <span key={allergen} className="inline-flex items-center gap-1.5 rounded-full border border-neutral-700/50 bg-neutral-800/50 text-neutral-400 text-xs px-2.5 py-1">
+            <span 
+              key={allergen} 
+              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-700/50 bg-neutral-800/50 text-neutral-400 text-xs px-2.5 py-1 whitespace-nowrap"
+            >
               <AllergenIcon name={allergen} />
               <span>{allergen}</span>
             </span>
