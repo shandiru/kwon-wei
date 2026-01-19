@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export default function HeroSection() {
   return (
     // Added pt-24 to give space for the fixed navbar
-    <section className="w-full min-h-screen bg-black text-white p-4 md:p-6 lg:p-8 pt-24 md:pt-28">
+    <section className="w-full min-h-screen bg-black text-white p-4 md:p-6 lg:p-8 pt-24 md:pt-28" id="home">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
         {/* LEFT BIG HERO WITH VIDEO */}

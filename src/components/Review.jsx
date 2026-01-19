@@ -25,7 +25,7 @@ const reviews = [
 
 const ReviewsSection = () => {
   return (
-    <section className="py-24 bg-black text-white">
+    <section className="py-24 bg-black text-white" id="reviews">
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-sm tracking-[0.3em] text-gray-400">REVIEWS</h2>

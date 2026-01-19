@@ -36,7 +36,7 @@ export default function MenuPage() {
   };
 
   return (
-    <div className="bg-[#0A0A0A] text-white min-h-screen">
+    <div className="bg-[#0A0A0A] text-white min-h-screen" id="menu">
       <div className="flex flex-col lg:flex-row w-full relative">
         
         {/* LEFT IMAGE SECTION */}

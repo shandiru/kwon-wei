@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <section className="relative py-20 bg-black overflow-hidden">
+    <section className="relative py-20 bg-black overflow-hidden" id="about">
 
       {/* Side Decorative Images - Lowered opacity for black background */}
       <img

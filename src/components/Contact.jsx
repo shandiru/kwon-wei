@@ -34,7 +34,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full bg-black text-white py-12 px-4 md:px-8 lg:px-16">
+    <section className="w-full bg-black text-white py-12 px-4 md:px-8 lg:px-16" id="contact">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         
         {/* LEFT IMAGE HERO */}
