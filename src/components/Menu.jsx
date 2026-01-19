@@ -200,22 +200,22 @@ export default function MenuPage() {
                   <span className="h-px bg-orange-500/30 flex-1" />
                 </h2>
                 {filteredItems.map(item => (
-                  <div key={item.name} className="flex justify-between gap-6 py-6 border-b border-white/5 group hover:bg-white/[0.02] transition-all px-4 -mx-4 rounded-xl">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-1">
-                        <h3 className="text-lg font-medium text-gray-100 group-hover:text-orange-400 transition-colors">{item.name}</h3>
+                  <div key={item.name} className="flex justify-between gap-3 sm:gap-6 py-6 border-b border-white/5 group hover:bg-white/[0.02] transition-all px-4 -mx-4 rounded-xl">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <h3 className="text-base sm:text-lg font-medium text-gray-100 group-hover:text-orange-400 transition-colors">{item.name}</h3>
                         {item.popular && <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />}
                         {item.vegetarian && <span className="text-[9px] font-black text-green-500 border border-green-500/30 px-1.5 py-0.5 rounded">VEG</span>}
                       </div>
                       <p className="text-xs text-gray-400 leading-relaxed italic">{item.description}</p>
-                      <div className="mt-3 flex gap-2">
+                      <div className="mt-3 flex gap-2 flex-wrap">
                         {item.allergens.map(a => (
                           <span key={a} className="text-[9px] text-gray-600 bg-white/5 px-2 py-0.5 rounded uppercase font-bold tracking-tighter">{a}</span>
                         ))}
                       </div>
                     </div>
-                    <div className="text-right flex flex-col items-end">
-                      <span className="text-lg font-light text-orange-400">{item.price}</span>
+                    <div className="text-right flex flex-col items-end flex-shrink-0">
+                      <span className="text-base sm:text-lg font-light text-orange-400 whitespace-nowrap">{item.price}</span>
                       {item.spiceLevel > 0 && (
                         <div className="flex gap-0.5 mt-2">
                           {Array.from({ length: item.spiceLevel }).map((_, i) => <Flame key={i} className="w-3 h-3 text-red-600" />)}
