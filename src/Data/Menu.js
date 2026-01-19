@@ -1524,3 +1524,39 @@
 
     ];
   
+
+
+  export  const setMenus = [
+  {
+    name: "Set Meal A for Two",
+    category: "Special Set Menu",
+    price: "£49.80",
+    people: 2,
+    starters: "Prawn Cocktail, Barbecued Spare Ribs, Chicken Sweetcorn Soup, Vegetable Pancake Rolls or Prawn Toast.",
+    mainCourses: ["Fried Chicken with Lemon Sauce", "Beef Fried with Onions", "King Prawns Fried with Mixed Vegetables", "Yung Chow Fried Rice"]
+  },
+  {
+    name: "Set Meal B for Three",
+    category: "Special Set Menu",
+    price: "£72.00",
+    people: 3,
+    starters: "Prawn Cocktail, Barbecued Spare Ribs, Chicken Sweetcorn Soup, Vegetable Pancake Rolls or Prawn Toast.",
+    mainCourses: ["Sweet and Sour Pork with Cantonese Sauce", "Roast Duck Cantonese Style", "Kung Po Chicken", "Beef Fried with Onions on a Hot Platter", "Yung Chow Fried Rice"]
+  },
+  {
+    name: "Set Meal C for Four",
+    category: "Special Set Menu",
+    price: "£92.80",
+    people: 4,
+    starters: "Prawn Cocktail, Barbecued Spare Ribs, Chicken Sweetcorn Soup, Vegetable Pancake Rolls or Prawn Toast.",
+    mainCourses: ["Roasted Duck Cantonese Style", "Sweet and Sour Pork with Cantonese Sauce", "Fried Chicken in Lemon Sauce", "King Prawn Fried with Seasonal Vegetables", "Beef Fried with Green Pepper in Black Bean Sauce", "Yung Chow Fried Rice"]
+  },
+  {
+    name: "Set Meal D for Six",
+    category: "Special Set Menu",
+    price: "£133.80",
+    people: 6,
+    starters: "Prawn Cocktail, Barbecued Spare Ribs, Chicken Sweetcorn Soup, Vegetable Pancake Rolls or Prawn Toast.",
+    mainCourses: ["Roasted Duck Cantonese Style", "Fried Chicken with Lemon Sauce", "Sweet and Sour Pork with Cantonese Sauce", "Beef Fried with Green Peppers in Black Bean Sauce", "King Prawns with Cashew Nuts", "Chicken Fried with Chilli Bean Sauce", "Yung Chow Fried Rice"]
+  }
+];
