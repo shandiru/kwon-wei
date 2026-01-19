@@ -3,8 +3,25 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
+  // SMOOTH SCROLL FUNCTION (Matches Navbar & Footer)
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Adjusted for fixed navbar height
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    // id="home" allows the Navbar "Home" link to scroll back here
     <section className="w-full min-h-screen bg-black text-white p-4 md:p-6 lg:p-8 pt-24 md:pt-28" id="home">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
@@ -30,13 +47,14 @@ export default function HeroSection() {
         {/* RIGHT SIDE BENTO GRID */}
         <div className="flex flex-col gap-6">
           {[
-            { img: "/h1.avif", title: "MENU", desc: "Discover our signature dishes", link: "#menu" },
-            { img: "/h2.avif", title: "RESERVATION", desc: "Book your dining experience", link: "#contact" },
-            { img: "/h3.avif", title: "OUR STORY", desc: "Explore our restaurant journey", link: "#about" },
+            { img: "/h1.avif", title: "MENU", desc: "Discover our signature dishes", id: "menu" },
+            { img: "/h2.avif", title: "RESERVATION", desc: "Book your dining experience", id: "contact" },
+            { img: "/h3.avif", title: "OUR STORY", desc: "Explore our restaurant journey", id: "about" },
           ].map((item, index) => (
             <a
               key={index}
-              href={item.link} // Now functional as a scroll link
+              href={`#${item.id}`}
+              onClick={(e) => scrollToSection(e, item.id)}
               className="group relative rounded-2xl overflow-hidden h-48 md:h-56 cursor-pointer border border-white/5"
             >
               <img

@@ -5,6 +5,24 @@ import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  // SMOOTH SCROLL FUNCTION (Same as Navbar)
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Offset for the fixed navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <footer className="bg-black text-white border-t border-white/10 pt-16 pb-8 font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -37,16 +55,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 2. QUICK LINKS - UPDATED TO SECTION IDs */}
+          {/* 2. QUICK LINKS */}
           <div>
             <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-white/50">Explore</h3>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">Our Story</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">Menu</a></li>
-              <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
-              <li><a href="#reviews" className="hover:text-white transition-colors">Reviews</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#home" onClick={(e) => scrollToSection(e, "home")} className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-white transition-colors">Our Story</a></li>
+              <li><a href="#menu" onClick={(e) => scrollToSection(e, "menu")} className="hover:text-white transition-colors">Menu</a></li>
+              <li><a href="#gallery" onClick={(e) => scrollToSection(e, "gallery")} className="hover:text-white transition-colors">Gallery</a></li>
+              <li><a href="#reviews" onClick={(e) => scrollToSection(e, "reviews")} className="hover:text-white transition-colors">Reviews</a></li>
+              <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -106,8 +124,8 @@ export default function Footer() {
             © {currentYear} KWON WEI RESTAURANT. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
-            <a href="#privacy" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#terms" className="hover:text-white transition-colors">Terms</a>
+            <a href="#privacy" onClick={(e) => scrollToSection(e, "privacy")} className="hover:text-white transition-colors">Privacy</a>
+            <a href="#terms" onClick={(e) => scrollToSection(e, "terms")} className="hover:text-white transition-colors">Terms</a>
           </div>
         </div>
       </div>
