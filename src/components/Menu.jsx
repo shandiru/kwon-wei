@@ -1,17 +1,14 @@
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { Star, Flame, X, ChevronLeft, ChevronRight, Users, Utensils, ArrowRight, MousePointer2 } from "lucide-react";
-import { allergens, categories, menuItems ,setMenus } from "../Data/Menu";
-
-
+import { allergens, categories, menuItems, setMenus } from "../Data/Menu";
 
 export default function MenuPage() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [excludedAllergens, setExcludedAllergens] = useState([]);
   const scrollRef = useRef(null);
 
-  // Scroll function for the arrows
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { current } = scrollRef;
@@ -23,12 +20,6 @@ export default function MenuPage() {
     }
   };
 
-  const allergenMap = useMemo(() => {
-    const map = {};
-    allergens.forEach(a => { map[a.name] = a.icon; });
-    return map;
-  }, []);
-
   const filteredItems = useMemo(() => {
     if (!selectedCategory) return [];
     return menuItems.filter(item => {
@@ -38,8 +29,10 @@ export default function MenuPage() {
     });
   }, [selectedCategory, excludedAllergens]);
 
-  const toggleAllergen = name => {
-    setExcludedAllergens(prev => prev.includes(name) ? prev.filter(a => a !== name) : [...prev, name]);
+  const toggleAllergen = (name) => {
+    setExcludedAllergens(prev => 
+      prev.includes(name) ? prev.filter(a => a !== name) : [...prev, name]
+    );
   };
 
   return (
@@ -68,8 +61,8 @@ export default function MenuPage() {
             <p className="text-gray-500 max-w-md">Select a category below to explore our authentic dishes.</p>
           </header>
 
-          {/* ALLERGEN FILTER */}
-          <div className="mb-10 bg-white/5 p-4 rounded-2xl border border-white/10">
+          {/* ALLERGEN FILTER - ADDED relative z-40 to fix clicking */}
+          <div className="relative z-40 mb-10 bg-white/5 p-4 rounded-2xl border border-white/10">
             <h3 className="text-[10px] font-black mb-3 text-orange-500 uppercase tracking-[0.2em] flex items-center gap-2">
               <X className="w-3 h-3" /> Filter by Allergens
             </h3>
@@ -78,8 +71,11 @@ export default function MenuPage() {
                 const Icon = allergen.icon;
                 const isEx = excludedAllergens.includes(allergen.name);
                 return (
-                  <button key={allergen.name} onClick={() => toggleAllergen(allergen.name)}
-                    className={`px-3 py-1.5 rounded-lg text-[11px] font-bold flex items-center gap-2 transition-all ${
+                  <button 
+                    key={allergen.name} 
+                    onClick={() => toggleAllergen(allergen.name)}
+                    type="button"
+                    className={`px-3 py-1.5 rounded-lg text-[11px] font-bold flex items-center gap-2 transition-all cursor-pointer pointer-events-auto ${
                       isEx ? "bg-red-500 text-white shadow-lg shadow-red-500/20" : "bg-white/5 text-gray-400 border border-white/10 hover:bg-white/10"
                     }`}>
                     <Icon className="w-3.5 h-3.5" /> {allergen.name}
@@ -89,14 +85,13 @@ export default function MenuPage() {
             </div>
           </div>
 
-          {/* CATEGORY NAV WITH ARROWS */}
-          <div className="sticky top-0 bg-[#0A0A0A]/95 backdrop-blur-md z-30 border-b border-white/5 mb-12 -mx-4 px-4 py-4">
+          {/* CATEGORY NAV - LOWERED z-index to 20 */}
+          <div className="sticky top-0 bg-[#0A0A0A]/95 backdrop-blur-md z-20 border-b border-white/5 mb-12 -mx-4 px-4 py-4">
             <div className="relative flex items-center group">
               
-              {/* Left Arrow Button */}
               <button 
                 onClick={() => scroll('left')}
-                className="absolute left-0 z-40 p-2 bg-orange-500 text-black rounded-full shadow-xl hover:scale-110 transition-transform lg:flex hidden items-center justify-center -translate-x-1/2"
+                className="absolute left-0 z-50 p-2 bg-orange-500 text-black rounded-full shadow-xl hover:scale-110 transition-transform lg:flex hidden items-center justify-center -translate-x-1/2"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -128,10 +123,9 @@ export default function MenuPage() {
                 ))}
               </div>
 
-              {/* Right Arrow Button */}
               <button 
                 onClick={() => scroll('right')}
-                className="absolute right-0 z-40 p-2 bg-orange-500 text-black rounded-full shadow-xl hover:scale-110 transition-transform lg:flex hidden items-center justify-center translate-x-1/2"
+                className="absolute right-0 z-50 p-2 bg-orange-500 text-black rounded-full shadow-xl hover:scale-110 transition-transform lg:flex hidden items-center justify-center translate-x-1/2"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -139,7 +133,7 @@ export default function MenuPage() {
           </div>
 
           {/* MAIN DISPLAY AREA */}
-          <main>
+          <main className="relative z-10">
             {!selectedCategory ? (
               <div className="py-20 flex flex-col items-center text-center border-2 border-dashed border-white/5 rounded-3xl">
                 <div className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-6">
@@ -195,6 +189,7 @@ export default function MenuPage() {
               </div>
             ) : (
               <div className="space-y-4 animate-in fade-in duration-500">
+                {/* ... (rest of your list items code remains the same) */}
                 <h2 className="text-sm font-black text-orange-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-4">
                   <span className="h-px bg-orange-500/30 flex-1" />
                   {selectedCategory}
@@ -228,17 +223,8 @@ export default function MenuPage() {
               </div>
             )}
           </main>
-
-          <footer className="mt-24 pt-8 border-t border-white/5 text-[10px] text-gray-500 uppercase tracking-widest text-center">
-            &copy; 2026 Authentic Cantonese Kitchen • Handcrafted Quality
-          </footer>
         </div>
       </div>
-
-      <style jsx>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
     </div>
   );
 }
