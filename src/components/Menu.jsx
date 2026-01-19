@@ -61,7 +61,7 @@ export default function MenuPage() {
             <p className="text-gray-500 max-w-md">Select a category below to explore our authentic dishes.</p>
           </header>
 
-          {/* ALLERGEN FILTER - ADDED relative z-40 to fix clicking */}
+          {/* ALLERGEN FILTER */}
           <div className="relative z-40 mb-10 bg-white/5 p-4 rounded-2xl border border-white/10">
             <h3 className="text-[10px] font-black mb-3 text-orange-500 uppercase tracking-[0.2em] flex items-center gap-2">
               <X className="w-3 h-3" /> Filter by Allergens
@@ -85,7 +85,7 @@ export default function MenuPage() {
             </div>
           </div>
 
-          {/* CATEGORY NAV - LOWERED z-index to 20 */}
+          {/* CATEGORY NAV - SWIPEABLE */}
           <div className="sticky top-0 bg-[#0A0A0A]/95 backdrop-blur-md z-20 border-b border-white/5 mb-12 -mx-4 px-4 py-4">
             <div className="relative flex items-center group">
               
@@ -98,11 +98,16 @@ export default function MenuPage() {
 
               <div 
                 ref={scrollRef} 
-                className="overflow-x-auto no-scrollbar scroll-smooth flex flex-nowrap gap-4 min-w-full px-2"
+                className="overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth flex flex-nowrap gap-3 w-full touch-pan-x"
+                style={{ 
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                  WebkitOverflowScrolling: 'touch'
+                }}
               >
                 <button
                   onClick={() => setSelectedCategory("Special Set Menu")}
-                  className={`whitespace-nowrap px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
+                  className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
                     selectedCategory === "Special Set Menu" ? "bg-orange-500 text-black border-orange-500" : "border-white/10 text-white hover:border-orange-500/50"
                   }`}
                 >
@@ -113,7 +118,7 @@ export default function MenuPage() {
                   <button
                     key={cat.name}
                     onClick={() => setSelectedCategory(cat.name)}
-                    className={`whitespace-nowrap px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
+                    className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
                       selectedCategory === cat.name ? "bg-orange-500 text-black border-orange-500" : "border-white/10 text-white hover:border-orange-500/50"
                     }`}
                   >
@@ -189,7 +194,6 @@ export default function MenuPage() {
               </div>
             ) : (
               <div className="space-y-4 animate-in fade-in duration-500">
-                {/* ... (rest of your list items code remains the same) */}
                 <h2 className="text-sm font-black text-orange-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-4">
                   <span className="h-px bg-orange-500/30 flex-1" />
                   {selectedCategory}
@@ -225,6 +229,12 @@ export default function MenuPage() {
           </main>
         </div>
       </div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 }
