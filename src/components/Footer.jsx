@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,9 +12,9 @@ export default function Footer() {
           
           {/* 1. BRAND INFO */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-serif tracking-[0.2em] font-bold uppercase text-[#D4AF37]">Wong Kwei</h2>
+            <h2 className="text-2xl font-serif tracking-[0.2em] font-bold uppercase text-white">KWON WEI</h2>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Savor the authentic taste of Cantonese and Hong Kong–style cuisine in the heart of Ashby-de-la-Zouch. 
+              Savor the authentic taste of Cantonese and Hong Kong–style cuisine. 
               Tradition meets excellence in every dish we serve.
             </p>
             <div className="flex space-x-5">
@@ -23,7 +22,7 @@ export default function Footer() {
                 href="https://web.facebook.com/wongkwei/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-400 hover:text-[#D4AF37] transition-colors"
+                className="text-gray-400 hover:text-orange-500 transition-colors"
               >
                 <Facebook size={20} />
               </a>
@@ -31,21 +30,23 @@ export default function Footer() {
                 href="https://www.instagram.com/wongkweiashby/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-400 hover:text-[#D4AF37] transition-colors"
+                className="text-gray-400 hover:text-orange-500 transition-colors"
               >
                 <Instagram size={20} />
               </a>
             </div>
           </div>
 
-          {/* 2. QUICK LINKS */}
+          {/* 2. QUICK LINKS - UPDATED TO SECTION IDs */}
           <div>
             <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-white/50">Explore</h3>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/menu" className="hover:text-white transition-colors">Menu</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">Our Story</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">Our Story</a></li>
+              <li><a href="#menu" className="hover:text-white transition-colors">Menu</a></li>
+              <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
+              <li><a href="#reviews" className="hover:text-white transition-colors">Reviews</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -54,24 +55,19 @@ export default function Footer() {
             <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-white/50">Contact</h3>
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-[#D4AF37] shrink-0" />
-                <a 
-                  href="https://www.google.com/maps/dir/?api=1&destination=Wong+Kwei+Ashby" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
+                <MapPin size={18} className="text-orange-500 shrink-0" />
+                <span className="text-gray-400">
                   9 Bath St, Ashby-de-la-Zouch<br />LE65 2FH, United Kingdom
-                </a>
+                </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-[#D4AF37] shrink-0" />
+                <Phone size={18} className="text-orange-500 shrink-0" />
                 <a href="tel:+441530412394" className="hover:text-white transition-colors">
                   01530 412394
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-[#D4AF37] shrink-0" />
+                <Mail size={18} className="text-orange-500 shrink-0" />
                 <a href="mailto:wongkweiashby@gmail.com" className="hover:text-white transition-colors break-all">
                   wongkweiashby@gmail.com
                 </a>
@@ -85,7 +81,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li className="flex justify-between border-b border-white/5 pb-1">
                 <span>Tuesday</span>
-                <span className="text-white">Closed</span>
+                <span className="text-orange-500">Closed</span>
               </li>
               <li className="flex justify-between border-b border-white/5 pb-1">
                 <span>Wed - Thu</span>
@@ -99,9 +95,6 @@ export default function Footer() {
                 <span>Sun - Mon</span>
                 <span className="text-white">5:00 – 10:00 PM</span>
               </li>
-              <li className="mt-4 text-[10px] text-gray-500 italic">
-                * Note: Closed on Tuesdays
-              </li>
             </ul>
           </div>
 
@@ -110,11 +103,11 @@ export default function Footer() {
         {/* BOTTOM BAR */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em]">
-            © {currentYear} WONG KWEI RESTAURANT. ALL RIGHTS RESERVED.
+            © {currentYear} KWON WEI RESTAURANT. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
-            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link to="/terms-conditions" className="hover:text-white transition-colors">Terms</Link>
+            <a href="#privacy" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#terms" className="hover:text-white transition-colors">Terms</a>
           </div>
         </div>
       </div>
