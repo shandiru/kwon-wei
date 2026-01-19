@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/menu" element={<RestaurantMenu />} />
+      
       </Routes>
       <Footer />
       {/* <GDPRBanner /> */}

@@ -40,9 +40,7 @@ export default function Navbar() {
 
           {/* ACTIONS */}
           <div className="hidden md:flex items-center gap-6">
-            <button className="text-white hover:scale-110 transition-transform">
-              <ShoppingBag size={20} />
-            </button>
+            
             <Link
               to="/menu/"
               className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black tracking-widest hover:bg-orange-500 hover:text-white transition-all duration-300"
