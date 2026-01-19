@@ -33,7 +33,7 @@ export default function Navbar() {
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-10 text-[11px] font-bold tracking-[0.15em] text-white/90">
             <Link to="/" className="hover:text-white transition-colors">HOME</Link>
-            <Link to="/restaurant/" className="hover:text-white transition-colors">MENU</Link>
+            <Link to="/menu/" className="hover:text-white transition-colors">MENU</Link>
             <Link to="/about" className="hover:text-white transition-colors">OUR STORY</Link>
             <Link to="/contact" className="hover:text-white transition-colors">CONTACT</Link>
           </div>
@@ -44,7 +44,7 @@ export default function Navbar() {
               <ShoppingBag size={20} />
             </button>
             <Link
-              to="/restaurant/"
+              to="/menu/"
               className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black tracking-widest hover:bg-orange-500 hover:text-white transition-all duration-300"
             >
               BOOK A TABLE
@@ -63,7 +63,7 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black/95 backdrop-blur-xl rounded-2xl border border-white/10 p-8 flex flex-col gap-6 text-center animate-in fade-in zoom-in duration-300">
             <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-xl font-serif text-white">Home</Link>
-            <Link to="/restaurant/" onClick={() => setMobileMenuOpen(false)} className="text-xl font-serif text-white">Menu</Link>
+            <Link to="/menu" onClick={() => setMobileMenuOpen(false)} className="text-xl font-serif text-white">Menu</Link>
             <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="text-xl font-serif text-white">About</Link>
             <Link to="/restaurant/" onClick={() => setMobileMenuOpen(false)} className="bg-white text-black py-3 rounded-xl font-bold">BOOK A TABLE</Link>
           </div>
