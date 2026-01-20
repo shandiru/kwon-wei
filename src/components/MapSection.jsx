@@ -10,7 +10,7 @@ export default function MapSection() {
   const standardMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.439583272671!2d-1.475892423311654!3d52.74604181958614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879fcc7463435c5%3A0x18750a89cd788af3!2sWong%20Kwei%20Restaurant!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk";
 
   return (
-    <section className="bg-[#0F0F0F] py-20 px-6 md:px-12">
+    <section className="bg-[#000000] py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-stretch">
           

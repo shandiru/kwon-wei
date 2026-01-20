@@ -15,9 +15,10 @@ const Home = () => {
             <About />
             <ImageSlider />
             <Review />
-             <VenueSection />
-            <MapSection />
+             {/* <VenueSection /> */}
+           
             <Contact />
+             <MapSection />
         </div>
     )
 }

@@ -39,7 +39,7 @@ export default function HeroSection() {
 
           <div className="absolute bottom-10 left-10">
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-serif leading-tight tracking-tighter">
-              SUSHI <br /> SENSATION
+              KWON  WEI
             </h1>
           </div>
         </div>

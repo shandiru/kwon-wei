@@ -20,7 +20,7 @@ const ImageSlider3 = () => {
   };
 
   return (
-    <section className="py-16 bg-[#eef0f4]" id="gallery">
+    <section className="py-16 bg-[#000000]" id="gallery">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="relative flex items-center">

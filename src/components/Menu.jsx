@@ -36,7 +36,7 @@ export default function MenuPage() {
   };
 
   return (
-    <div className="bg-[#0A0A0A] text-white min-h-screen" id="menu">
+    <div className="bg-[#000000] text-white min-h-screen" id="menu">
       <div className="flex flex-col lg:flex-row w-full relative">
         
         {/* LEFT IMAGE SECTION */}
@@ -123,7 +123,7 @@ export default function MenuPage() {
                     }`}
                   >
                     <span className="block">{cat.name}</span>
-                    <span className="block text-[8px] font-normal opacity-60 mt-0.5">{cat.chinese}</span>
+                   
                   </button>
                 ))}
               </div>
