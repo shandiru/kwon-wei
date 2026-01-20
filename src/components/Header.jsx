@@ -14,23 +14,33 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // SMOOTH SCROLL FUNCTION
+  // SMOOTH SCROLL LOGIC
   const scrollToSection = (e, id) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // Adjusted for Navbar height
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    const isHomePage = window.location.pathname === "/";
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+    // Agar home page la iruntha mattum smooth scroll panni e.preventDefault() panna pothum
+    if (isHomePage) {
+      const element = document.getElementById(id);
+      if (element) {
+        e.preventDefault(); // Default jump-ah stop panni smooth scroll panrom
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+        
+        // Mobile menu-va close pannu
+        setMobileMenuOpen(false);
+        // URL-la hash-ah mathu (optional)
+        window.history.pushState(null, "", `/#${id}`);
+      }
     }
-    setMobileMenuOpen(false);
+    // Home page illati e.preventDefault() nadakkathu, so standard <a href="/#id"> moolama home page-ku pogum
   };
 
   const navLinks = [
@@ -48,12 +58,12 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className={`flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${
-          isScrolled ? "bg-black/80 backdrop-blur-lg border border-white/10 shadow-2xl" : "bg-transparent"
+          isScrolled ? "bg-black border border-white/10 shadow-2xl" : "bg-transparent"
         }`}>
           
-          {/* LOGO */}
-          <a href="#home" onClick={(e) => scrollToSection(e, "home")} className="flex items-center gap-2">
-            <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif">KWON WEI</h2>
+          {/* LOGO - Goes to Home */}
+          <a href="/#home" onClick={(e) => scrollToSection(e, "home")} className="flex items-center gap-2">
+            <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif uppercase">KWON WEI</h2>
           </a>
 
           {/* DESKTOP MENU */}
@@ -61,9 +71,9 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a 
                 key={link.id}
-                href={`#${link.id}`} 
+                href={`/#${link.id}`} // Entha page-la irunthum home-ku poga path use panrom
                 onClick={(e) => scrollToSection(e, link.id)}
-                className="hover:text-[#E5162D] transition-colors"
+                className="hover:text-[#E5162D] transition-colors duration-300"
               >
                 {link.name}
               </a>
@@ -73,7 +83,7 @@ export default function Navbar() {
           {/* ACTIONS */}
           <div className="hidden md:flex items-center gap-6">
             <a
-              href="#contact"
+              href="/#contact"
               onClick={(e) => scrollToSection(e, "contact")}
               className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black tracking-widest hover:bg-[#E5162D] hover:text-white transition-all duration-300"
             >
@@ -91,18 +101,24 @@ export default function Navbar() {
 
         {/* MOBILE OVERLAY MENU */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black/95 backdrop-blur-xl rounded-2xl border border-white/10 p-8 flex flex-col gap-6 text-center animate-in fade-in zoom-in duration-300">
+          <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl">
             {navLinks.map((link) => (
               <a 
                 key={link.id}
-                href={`#${link.id}`} 
+                href={`/#${link.id}`} 
                 onClick={(e) => scrollToSection(e, link.id)}
-                className="text-xl font-serif text-white hover:text-orange-500"
+                className="text-lg font-bold tracking-widest text-white hover:text-[#E5162D] transition-colors"
               >
-                {link.name.charAt(0) + link.name.slice(1).toLowerCase()}
+                {link.name}
               </a>
             ))}
-            <a href="#booking" onClick={(e) => scrollToSection(e, "booking")} className="bg-white text-black py-3 rounded-xl font-bold">BOOK A TABLE</a>
+            <a 
+              href="/#contact" 
+              onClick={(e) => scrollToSection(e, "contact")} 
+              className="bg-[#E5162D] text-white py-4 rounded-xl font-black text-xs tracking-[0.2em]"
+            >
+              BOOK A TABLE
+            </a>
           </div>
         )}
       </div>
