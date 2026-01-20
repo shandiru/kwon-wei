@@ -31,7 +31,7 @@ export default function Footer() {
           {/* 1. BRAND INFO */}
           <div className="space-y-6">
             <h2 className="text-2xl font-serif tracking-[0.2em] font-bold uppercase text-white">KWON WEI</h2>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-light">
               Savor the authentic taste of Cantonese and Hong Kong–style cuisine. 
               Tradition meets excellence in every dish we serve.
             </p>
@@ -40,7 +40,7 @@ export default function Footer() {
                 href="https://web.facebook.com/wongkwei/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-400 hover:text-orange-500 transition-colors"
+                className="text-gray-400 hover:text-[#E5162D] transition-colors"
               >
                 <Facebook size={20} />
               </a>
@@ -48,7 +48,7 @@ export default function Footer() {
                 href="https://www.instagram.com/wongkweiashby/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-400 hover:text-orange-500 transition-colors"
+                className="text-gray-400 hover:text-[#E5162D] transition-colors"
               >
                 <Instagram size={20} />
               </a>
@@ -57,35 +57,35 @@ export default function Footer() {
 
           {/* 2. QUICK LINKS */}
           <div>
-            <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-white/50">Explore</h3>
+            <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50">Explore</h3>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="#home" onClick={(e) => scrollToSection(e, "home")} className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-white transition-colors">Our Story</a></li>
-              <li><a href="#menu" onClick={(e) => scrollToSection(e, "menu")} className="hover:text-white transition-colors">Menu</a></li>
-              <li><a href="#gallery" onClick={(e) => scrollToSection(e, "gallery")} className="hover:text-white transition-colors">Gallery</a></li>
-              <li><a href="#reviews" onClick={(e) => scrollToSection(e, "reviews")} className="hover:text-white transition-colors">Reviews</a></li>
-              <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#home" onClick={(e) => scrollToSection(e, "home")} className="hover:text-[#E5162D] transition-colors">Home</a></li>
+              <li><a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-[#E5162D] transition-colors">Our Story</a></li>
+              <li><a href="#menu" onClick={(e) => scrollToSection(e, "menu")} className="hover:text-[#E5162D] transition-colors">Menu</a></li>
+              <li><a href="#gallery" onClick={(e) => scrollToSection(e, "gallery")} className="hover:text-[#E5162D] transition-colors">Gallery</a></li>
+              <li><a href="#reviews" onClick={(e) => scrollToSection(e, "reviews")} className="hover:text-[#E5162D] transition-colors">Reviews</a></li>
+              <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-[#E5162D] transition-colors">Contact</a></li>
             </ul>
           </div>
 
           {/* 3. CONTACT INFO */}
           <div>
-            <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-white/50">Contact</h3>
+            <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50">Contact</h3>
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-orange-500 shrink-0" />
+                <MapPin size={18} className="text-[#E5162D] shrink-0" />
                 <span className="text-gray-400">
                   9 Bath St, Ashby-de-la-Zouch<br />LE65 2FH, United Kingdom
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-orange-500 shrink-0" />
+                <Phone size={18} className="text-[#E5162D] shrink-0" />
                 <a href="tel:+441530412394" className="hover:text-white transition-colors">
                   01530 412394
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-orange-500 shrink-0" />
+                <Mail size={18} className="text-[#E5162D] shrink-0" />
                 <a href="mailto:wongkweiashby@gmail.com" className="hover:text-white transition-colors break-all">
                   wongkweiashby@gmail.com
                 </a>
@@ -95,11 +95,11 @@ export default function Footer() {
 
           {/* 4. OPENING HOURS */}
           <div>
-            <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-white/50">Hours</h3>
+            <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50">Hours</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li className="flex justify-between border-b border-white/5 pb-1">
                 <span>Tuesday</span>
-                <span className="text-orange-500">Closed</span>
+                <span className="text-[#E5162D] font-bold">Closed</span>
               </li>
               <li className="flex justify-between border-b border-white/5 pb-1">
                 <span>Wed - Thu</span>
@@ -124,8 +124,8 @@ export default function Footer() {
             © {currentYear} KWON WEI RESTAURANT. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
-            <a href="#privacy" onClick={(e) => scrollToSection(e, "privacy")} className="hover:text-white transition-colors">Privacy</a>
-            <a href="#terms" onClick={(e) => scrollToSection(e, "terms")} className="hover:text-white transition-colors">Terms</a>
+            <a href="#privacy" onClick={(e) => scrollToSection(e, "privacy")} className="hover:text-[#E5162D] transition-colors">Privacy</a>
+            <a href="#terms" onClick={(e) => scrollToSection(e, "terms")} className="hover:text-[#E5162D] transition-colors">Terms</a>
           </div>
         </div>
       </div>

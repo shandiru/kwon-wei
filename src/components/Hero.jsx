@@ -3,12 +3,11 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
-  // SMOOTH SCROLL FUNCTION (Matches Navbar & Footer)
   const scrollToSection = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // Adjusted for fixed navbar height
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -26,7 +25,10 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
         {/* LEFT BIG HERO WITH VIDEO */}
-        <div className="relative lg:col-span-2 rounded-3xl overflow-hidden shadow-2xl">
+        <div 
+          className="relative lg:col-span-2 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+          data-aos="fade-right"
+        >
           <video
             src="/vedio.mp4"
             autoPlay 
@@ -35,11 +37,11 @@ export default function HeroSection() {
             playsInline
             className="w-full h-[65vh] md:h-[80vh] lg:h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-          <div className="absolute bottom-10 left-10">
+          <div className="absolute bottom-10 left-10" data-aos="fade-up" data-aos-delay="400">
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-serif leading-tight tracking-tighter">
-              KWON  WEI
+              KWON <span style={{ color: "#E5162D" }}>WEI</span>
             </h1>
           </div>
         </div>
@@ -55,6 +57,8 @@ export default function HeroSection() {
               key={index}
               href={`#${item.id}`}
               onClick={(e) => scrollToSection(e, item.id)}
+              data-aos="fade-left"
+              data-aos-delay={index * 200} // Staggered animation
               className="group relative rounded-2xl overflow-hidden h-48 md:h-56 cursor-pointer border border-white/5"
             >
               <img
@@ -62,16 +66,18 @@ export default function HeroSection() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 alt={item.title}
               />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-all duration-300"></div>
               
               {/* Normal State Label */}
               <div className="absolute bottom-6 right-6 flex items-center gap-2 text-lg font-semibold transition-all duration-500 group-hover:translate-y-[-20px] group-hover:opacity-0">
-                {item.title} <ArrowRight className="h-5 w-5 text-orange-500" />
+                {item.title} 
+                <ArrowRight className="h-5 w-5" style={{ color: "#E5162D" }} />
               </div>
 
               {/* Hover State Description */}
-              <div className="absolute bottom-6 right-6 flex items-center gap-2 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-[-2px] text-sm italic text-orange-400">
-                {item.desc} <ArrowRight className="h-4 w-4" />
+              <div className="absolute bottom-6 right-6 flex flex-col items-end opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-[-2px]">
+                <span className="text-sm italic mb-1" style={{ color: "#E5162D" }}>{item.desc}</span>
+                <ArrowRight className="h-4 w-4 text-white" />
               </div>
             </a>
           ))}

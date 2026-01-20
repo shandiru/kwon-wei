@@ -1,52 +1,83 @@
+"use client";
+
+import React from "react";
+
 export default function AboutUs() {
   return (
-    <section className="relative py-20 bg-black overflow-hidden" id="about">
+    <section className="relative py-24 bg-black overflow-hidden" id="about">
 
-      {/* Side Decorative Images - Lowered opacity for black background */}
+      {/* Side Decorative Images - Red Tinge with Inversion */}
       <img
         src="https://www.benihanainternational.com/wp-content/themes/grilla/img/left-letters.svg"
         alt=""
-        className="absolute left-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none hidden md:block invert"
+        className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden md:block invert"
+        data-aos="fade-right"
+        data-aos-duration="1500"
       />
       <img
         src="https://www.benihanainternational.com/wp-content/themes/grilla/img/right-letters.svg"
         alt=""
-        className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none hidden md:block invert"
+        className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden md:block invert"
+        data-aos="fade-left"
+        data-aos-duration="1500"
       />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
 
-        {/* Flower Icon - Added 'invert' to make it pop on black if it's dark */}
-        <img
-          src="https://www.benihanainternational.com/wp-content/uploads/2025/07/flower.svg"
-          alt=""
-          className="mx-auto mb-10 w-24 md:w-32 brightness-200"
-        />
+        {/* Flower Icon - Styled with Brand Red Shadow */}
+        <div data-aos="zoom-in" data-aos-duration="1000">
+          <img
+            src="https://www.benihanainternational.com/wp-content/uploads/2025/07/flower.svg"
+            alt=""
+            className="mx-auto mb-10 w-20 md:w-28 brightness-200"
+            style={{ filter: "drop-shadow(0px 0px 8px rgba(229, 22, 45, 0.5)) invert(1)" }}
+          />
+        </div>
 
-        {/* Title - Changed to Gold/Yellow for contrast */}
-        <h2 className="text-3xl md:text-[32px] font-extrabold leading-snug text-[#D4AF37] uppercase tracking-wide">
-          Wong Kwei Chinese Restaurant – Ashby-de-la-Zouch
+        {/* Title - Changed to White with Red Highlight */}
+        <h2 
+          className="text-3xl md:text-[40px] font-serif leading-tight text-white uppercase tracking-tight"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          KWON WEI <span style={{ color: "#E5162D" }}>CHINESE RESTAURANT</span>
+          <span className="block text-lg font-sans font-light tracking-[0.3em] mt-2 text-gray-400">
+            Ashby-de-la-Zouch
+          </span>
         </h2>
 
-        {/* Description - Changed text to white/gray for readability */}
-        <div className="mt-6 space-y-5 text-base md:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        {/* Description */}
+        <div 
+          className="mt-8 space-y-6 text-base md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed font-light"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <p>
-            At Wong Kwei Chinese Restaurant, we bring the authentic flavours of 
+            At Kwon Wei, we bring the authentic flavours of 
             Cantonese and Hong Kong–style cuisine to the heart of Ashby-de-la-Zouch. 
             Our menu is crafted using traditional techniques and fresh ingredients 
             to deliver rich, comforting dishes for every occasion.
           </p>
           <p>
             Whether you’re enjoying a relaxed lunch, a family dinner, or an evening 
-            out with friends, Wong Kwei offers a warm atmosphere and a menu full 
-            of classic favourites. From flavourful stir-fries to expertly prepared 
-            specialties, every meal is made to be enjoyed.
+            out with friends, Kwon Wei offers a warm atmosphere and a menu full 
+            of classic favourites. Every meal is made to be enjoyed.
           </p>
           
-          {/* Highlighted Closing Line */}
-          <p className="font-semibold text-[#D4AF37] pt-4">
-            Step in, take a seat, and experience Chinese dining done right.
-          </p>
+          {/* Highlighted Closing Line - Brand Red */}
+          <div 
+            className="pt-6"
+            data-aos="zoom-in"
+            data-aos-delay="600"
+          >
+            <div 
+              className="h-px w-20 mx-auto mb-6" 
+              style={{ backgroundColor: "#E5162D" }}
+            ></div>
+            <p className="font-medium tracking-wide text-xl italic" style={{ color: "#E5162D" }}>
+              Step in, take a seat, and experience Chinese dining done right.
+            </p>
+          </div>
         </div>
 
       </div>
