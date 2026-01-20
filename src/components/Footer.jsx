@@ -1,16 +1,17 @@
 "use client";
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link for internal routing
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // SMOOTH SCROLL FUNCTION (Same as Navbar)
+  // SMOOTH SCROLL FUNCTION (For IDs on the same page)
   const scrollToSection = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // Offset for the fixed navbar
+      const offset = 80; 
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -59,12 +60,12 @@ export default function Footer() {
           <div>
             <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50">Explore</h3>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><a href="#home" onClick={(e) => scrollToSection(e, "home")} className="hover:text-[#E5162D] transition-colors">Home</a></li>
-              <li><a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-[#E5162D] transition-colors">Our Story</a></li>
-              <li><a href="#menu" onClick={(e) => scrollToSection(e, "menu")} className="hover:text-[#E5162D] transition-colors">Menu</a></li>
-              <li><a href="#gallery" onClick={(e) => scrollToSection(e, "gallery")} className="hover:text-[#E5162D] transition-colors">Gallery</a></li>
-              <li><a href="#reviews" onClick={(e) => scrollToSection(e, "reviews")} className="hover:text-[#E5162D] transition-colors">Reviews</a></li>
-              <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-[#E5162D] transition-colors">Contact</a></li>
+              <li><a href="#home" onClick={(e) => scrollToSection(e, "home")} className="hover:text-[#E5162D] transition-colors cursor-pointer">Home</a></li>
+              <li><a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-[#E5162D] transition-colors cursor-pointer">Our Story</a></li>
+              <li><a href="#menu" onClick={(e) => scrollToSection(e, "menu")} className="hover:text-[#E5162D] transition-colors cursor-pointer">Menu</a></li>
+              <li><a href="#gallery" onClick={(e) => scrollToSection(e, "gallery")} className="hover:text-[#E5162D] transition-colors cursor-pointer">Gallery</a></li>
+              <li><a href="#reviews" onClick={(e) => scrollToSection(e, "reviews")} className="hover:text-[#E5162D] transition-colors cursor-pointer">Reviews</a></li>
+              <li><a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-[#E5162D] transition-colors cursor-pointer">Contact</a></li>
             </ul>
           </div>
 
@@ -123,10 +124,27 @@ export default function Footer() {
           <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em]">
             © {currentYear} KWON WEI RESTAURANT. ALL RIGHTS RESERVED.
           </p>
+          
           <div className="flex gap-6 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
-            <a href="#privacy" onClick={(e) => scrollToSection(e, "privacy")} className="hover:text-[#E5162D] transition-colors">Privacy</a>
-            <a href="#terms" onClick={(e) => scrollToSection(e, "terms")} className="hover:text-[#E5162D] transition-colors">Terms</a>
+            {/* Updated to use React Router Links for the routes provided */}
+            <Link to="/privacy-policy" className="hover:text-[#E5162D] transition-colors">Privacy</Link>
+            <Link to="/terms-conditions" className="hover:text-[#E5162D] transition-colors">Terms</Link>
           </div>
+        </div>
+
+        {/* POWERED BY SECTION */}
+        <div className="mt-8 text-center">
+          <p className="text-[9px] text-gray-600 uppercase tracking-[0.3em]">
+            Powered by{" "}
+            <a 
+              href="https://www.ansely.co.uk/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-[#E5162D] transition-colors font-bold"
+            >
+              Ansely
+            </a>
+          </p>
         </div>
       </div>
     </footer>

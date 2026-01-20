@@ -63,7 +63,7 @@ export default function Navbar() {
                 key={link.id}
                 href={`#${link.id}`} 
                 onClick={(e) => scrollToSection(e, link.id)}
-                className="hover:text-orange-500 transition-colors"
+                className="hover:text-[#E5162D] transition-colors"
               >
                 {link.name}
               </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, "contact")}
-              className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black tracking-widest hover:bg-orange-500 hover:text-white transition-all duration-300"
+              className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black tracking-widest hover:bg-[#E5162D] hover:text-white transition-all duration-300"
             >
               BOOK A TABLE
             </a>

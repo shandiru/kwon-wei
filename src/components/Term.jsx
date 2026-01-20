@@ -77,10 +77,10 @@ const TermsConditions = () => {
                           If you have any questions about these Terms of Use, please contact us:
                       </p>
                       <div className="text-white">
-                          <p><strong>AF-MOK Performance</strong></p>
-                          <p>Email: <a href="mailto:afmok.performance@outlook.com" className="text-cyan-400 hover:underline">afmok.performance@outlook.com</a></p>
-                          <p>Phone: +44 7494 481443</p>
-                          <p>Address: Unit 6, Spon Lane Trading Estate, Varney Ave, West Bromwich B70 6AE, United Kingdom</p>
+                          <p><strong>Wong Kwei Restaurant</strong></p>
+                          <p>Email: <a href="mailto:wongkweiashby@gmail.com" className="text-cyan-400 hover:underline">wongkweiashby@gmail.com</a></p>
+                          <p>Phone:  +44 1530 412394</p>
+                          <p>Address: Wong Kwei Restaurant, 9 Bath St, Ashby-de-la-Zouch LE65 2FH, United Kingdom</p>
                       </div>
                   </section>
               </div>
