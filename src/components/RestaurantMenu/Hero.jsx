@@ -28,7 +28,7 @@ const Hero = () => {
 
           <div>
             <h1 className="font-serif text-5xl md:text-7xl font-bold text-white tracking-tight">
-              Kwon Wei
+              Wong Kwei
             </h1>
             <p className="text-2xl md:text-3xl text-amber-500 font-serif mt-3">
               官围餐厅

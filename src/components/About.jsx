@@ -40,7 +40,7 @@ export default function AboutUs() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          KWON WEI <span style={{ color: "#E5162D" }}>CHINESE RESTAURANT</span>
+          Wong Kwei <span style={{ color: "#E5162D" }}>CHINESE RESTAURANT</span>
           <span className="block text-lg font-sans font-light tracking-[0.3em] mt-2 text-gray-400">
             Ashby-de-la-Zouch
           </span>
@@ -53,14 +53,14 @@ export default function AboutUs() {
           data-aos-delay="400"
         >
           <p>
-            At Kwon Wei, we bring the authentic flavours of 
+            At Wong Kwei, we bring the authentic flavours of 
             Cantonese and Hong Kong–style cuisine to the heart of Ashby-de-la-Zouch. 
             Our menu is crafted using traditional techniques and fresh ingredients 
             to deliver rich, comforting dishes for every occasion.
           </p>
           <p>
             Whether you’re enjoying a relaxed lunch, a family dinner, or an evening 
-            out with friends, Kwon Wei offers a warm atmosphere and a menu full 
+            out with friends, Wong Kwei offers a warm atmosphere and a menu full 
             of classic favourites. Every meal is made to be enjoyed.
           </p>
           

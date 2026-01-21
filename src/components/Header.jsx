@@ -63,7 +63,7 @@ export default function Navbar() {
           
           {/* LOGO - Goes to Home */}
           <a href="/#home" onClick={(e) => scrollToSection(e, "home")} className="flex items-center gap-2">
-            <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif uppercase">KWON WEI</h2>
+            <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif uppercase">Wong Kwei</h2>
           </a>
 
           {/* DESKTOP MENU */}

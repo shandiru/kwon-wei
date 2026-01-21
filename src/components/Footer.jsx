@@ -31,7 +31,7 @@ export default function Footer() {
           
           {/* 1. BRAND INFO */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-serif tracking-[0.2em] font-bold uppercase text-white">KWON WEI</h2>
+            <h2 className="text-2xl font-serif tracking-[0.2em] font-bold uppercase text-white">Wong Kwei</h2>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-light">
               Savor the authentic taste of Cantonese and Hong Kong–style cuisine. 
               Tradition meets excellence in every dish we serve.
@@ -122,7 +122,7 @@ export default function Footer() {
         {/* BOTTOM BAR */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em]">
-            © {currentYear} KWON WEI RESTAURANT. ALL RIGHTS RESERVED.
+            © {currentYear} Wong Kwei RESTAURANT. ALL RIGHTS RESERVED.
           </p>
           
           <div className="flex gap-6 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
