@@ -41,7 +41,7 @@ export default function HeroSection() {
 
           <div className="absolute bottom-10 left-10" data-aos="fade-up" data-aos-delay="400">
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-serif leading-tight tracking-tighter">
-              KWON <span style={{ color: "#E5162D" }}>WEI</span>
+              WONG<span style={{ color: "#E5162D" }}>KWEI</span>
             </h1>
           </div>
         </div>
