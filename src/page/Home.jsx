@@ -15,7 +15,7 @@ const Home = () => {
             <About />
             <ImageSlider />
             <Review />
-             {/* <VenueSection /> */}
+             <VenueSection />
            
             <Contact />
              <MapSection />
