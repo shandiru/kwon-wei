@@ -8,14 +8,14 @@ export default function AboutUs() {
 
       {/* Side Decorative Images - Red Tinge with Inversion */}
       <img
-        src="https://www.benihanainternational.com/wp-content/themes/grilla/img/left-letters.svg"
+        src="/left-letters.svg"
         alt=""
         className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden md:block invert"
         data-aos="fade-right"
         data-aos-duration="1500"
       />
       <img
-        src="https://www.benihanainternational.com/wp-content/themes/grilla/img/right-letters.svg"
+        src="/right-letters.svg"
         alt=""
         className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none hidden md:block invert"
         data-aos="fade-left"
