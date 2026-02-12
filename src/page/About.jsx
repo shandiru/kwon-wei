@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 export default function AboutUs() {
@@ -27,9 +25,9 @@ export default function AboutUs() {
         {/* Flower Icon - Styled with Brand Red Shadow */}
         <div data-aos="zoom-in" data-aos-duration="1000">
           <img
-            src="https://www.benihanainternational.com/wp-content/uploads/2025/07/flower.svg"
-            alt=""
-            className="mx-auto mb-10 w-20 md:w-28 brightness-200"
+            src="about.png"
+            alt="about wong kwei restaurant"
+            className="mx-auto mt-10 mb-10 w-20 md:w-28 brightness-200"
             style={{ filter: "drop-shadow(0px 0px 8px rgba(229, 22, 45, 0.5)) invert(1)" }}
           />
         </div>

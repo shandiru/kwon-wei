@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { Star } from "lucide-react";
 
 const reviews = [
@@ -30,21 +27,21 @@ const ReviewsSection = () => {
   return (
     <section className="py-24 bg-black text-white overflow-hidden" id="reviews">
       {/* Heading */}
-      <div className="text-center mb-16" data-aos="fade-down">
+      <div className="text-center mb-16 mt-10" data-aos="fade-down">
         <h2 className="text-sm tracking-[0.3em] font-bold" style={{ color: "#E5162D" }}>
           TESTIMONIALS
         </h2>
         <h3 className="text-4xl md:text-5xl font-serif mt-3 text-white">
           Our Customers Love Us
         </h3>
-        <div 
-          className="h-1 w-20 mx-auto mt-6" 
+        <div
+          className="h-1 w-20 mx-auto mt-6"
           style={{ backgroundColor: "#E5162D" }}
         ></div>
       </div>
 
       {/* Review Grid */}
-      <div 
+      <div
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 border border-white/10"
         data-aos="fade-up"
       >
@@ -69,7 +66,7 @@ const ReviewsSection = () => {
 
             <div className="flex items-center gap-4 mt-auto">
               <div className="relative">
-                <div 
+                <div
                   className="absolute -inset-1 rounded-full blur-[2px] opacity-0 group-hover:opacity-50 transition-opacity"
                   style={{ backgroundColor: "#E5162D" }}
                 ></div>
@@ -90,19 +87,21 @@ const ReviewsSection = () => {
 
       {/* Read More */}
       <div className="text-center mt-16" data-aos="zoom-in">
-        <button 
+        <button
           className="px-8 py-3 rounded-full text-xs font-bold tracking-[0.2em] border transition-all duration-300 hover:scale-105 active:scale-95"
-          style={{ 
-            borderColor: "#E5162D", 
+          style={{
+            borderColor: "#E5162D",
             color: "white",
             backgroundColor: "transparent"
           }}
           onMouseEnter={(e) => (e.target.style.backgroundColor = "#E5162D")}
           onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
+          onClick={() => window.open("https://www.google.com/search?sca_esv=2cf3e72a8cc0c0c9&rlz=1C1KNTJ_enLK1089LK1089&sxsrf=ANbL-n4fDwyNfOhcWrQa9jjd4K9ShxerYw:1770911004522&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xx6D-BkOXqUQAF7O5swuvA7e2-qUhl4rJrn6-cmgw4ngnWX7WvA2QzuenqSVMmKFTL-HWfKkDcDEh5VMP6X96s5r3Btrp1KLdmBWW86Qa-H7Fah-_w%3D%3D&q=Wong+Kwei+Restaurant+Reviews&sa=X&ved=2ahUKEwjYuunKpdSSAxVNm68BHSYVMjEQ0bkNegQILBAH&biw=1366&bih=633&dpr=1", "_blank")}
         >
           READ MORE REVIEWS
         </button>
       </div>
+
     </section>
   );
 };

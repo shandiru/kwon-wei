@@ -73,7 +73,7 @@ export default function GDPRConsent() {
         <div className="fixed bottom-6 right-6 z-40">
           <button
             onClick={handleIconClick}
-            className="w-12 h-12 bg-black border border-white flex items-center justify-center hover:bg-[#E5162D] transition-all duration-300 group shadow-xl"
+            className="w-12 h-12 bg-black border rounded-full border-white flex items-center justify-center hover:bg-[#E5162D] transition-all duration-300 group shadow-xl"
             title="Privacy Preferences"
           >
             <img

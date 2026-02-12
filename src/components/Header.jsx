@@ -1,6 +1,6 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,73 +14,91 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // SMOOTH SCROLL LOGIC
+  // Smooth scroll only for home sections
   const scrollToSection = (e, id) => {
     const isHomePage = window.location.pathname === "/";
 
-    // Agar home page la iruntha mattum smooth scroll panni e.preventDefault() panna pothum
     if (isHomePage) {
       const element = document.getElementById(id);
       if (element) {
-        e.preventDefault(); // Default jump-ah stop panni smooth scroll panrom
+        e.preventDefault();
+
         const offset = 80;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
+        const position = elementRect - bodyRect - offset;
 
         window.scrollTo({
-          top: offsetPosition,
+          top: position,
           behavior: "smooth",
         });
-        
-        // Mobile menu-va close pannu
+
         setMobileMenuOpen(false);
-        // URL-la hash-ah mathu (optional)
         window.history.pushState(null, "", `/#${id}`);
       }
     }
-    // Home page illati e.preventDefault() nadakkathu, so standard <a href="/#id"> moolama home page-ku pogum
   };
 
   const navLinks = [
-    { name: "HOME", id: "home" },
-    { name: "ABOUT", id: "about" },
-    { name: "MENU", id: "menu" },
-    { name: "GALLERY", id: "gallery" },
-    { name: "REVIEWS", id: "reviews" },
-    { name: "CONTACT", id: "contact" },
+    { name: "HOME", id: "", type: "scroll" },
+    { name: "ABOUT", path: "/about", type: "page" },
+    { name: "MENU", id: "menu", type: "scroll" },
+    { name: "GALLERY", id: "gallery", type: "scroll" },
+    { name: "REVIEWS", path: "/reviews", type: "page" },
+    { name: "EVENT HIRE", path: "/event-hire", type: "page" },
+    { name: "CONTACT", id: "contact", type: "scroll" },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
-      isScrolled ? "py-3" : "py-6"
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
+        isScrolled ? "py-3" : "py-6"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className={`flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${
-          isScrolled ? "bg-black border border-white/10 shadow-2xl" : "bg-transparent"
-        }`}>
-          
-          {/* LOGO - Goes to Home */}
-          <a href="/#home" onClick={(e) => scrollToSection(e, "home")} className="flex items-center gap-2">
-            <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif uppercase">Wong Kwei</h2>
+        <div
+          className={`flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${
+            isScrolled
+              ? "bg-black border border-white/10 shadow-2xl"
+              : "bg-transparent"
+          }`}
+        >
+          {/* LOGO */}
+          <a
+            href="/#home"
+            onClick={(e) => scrollToSection(e, "home")}
+            className="flex items-center gap-2"
+          >
+            <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif uppercase">
+              Wong Kwei
+            </h2>
           </a>
 
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] text-white/90">
-            {navLinks.map((link) => (
-              <a 
-                key={link.id}
-                href={`/#${link.id}`} // Entha page-la irunthum home-ku poga path use panrom
-                onClick={(e) => scrollToSection(e, link.id)}
-                className="hover:text-[#E5162D] transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.type === "scroll" ? (
+                <Link
+                  key={link.id}
+                  to={`/#${link.id}`}
+                  onClick={(e) => scrollToSection(e, link.id)}
+                  className="hover:text-[#E5162D] transition-colors duration-300"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="hover:text-[#E5162D] transition-colors duration-300"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
 
-          {/* ACTIONS */}
+          {/* CTA */}
           <div className="hidden md:flex items-center gap-6">
             <a
               href="/#contact"
@@ -92,29 +110,44 @@ export default function Navbar() {
           </div>
 
           {/* MOBILE TOGGLE */}
-          <div className="md:hidden flex items-center gap-4">
-             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white">
+          <div className="md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white"
+            >
               {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
-        {/* MOBILE OVERLAY MENU */}
+        {/* MOBILE MENU */}
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl">
-            {navLinks.map((link) => (
-              <a 
-                key={link.id}
-                href={`/#${link.id}`} 
-                onClick={(e) => scrollToSection(e, link.id)}
-                className="text-lg font-bold tracking-widest text-white hover:text-[#E5162D] transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-            <a 
-              href="/#contact" 
-              onClick={(e) => scrollToSection(e, "contact")} 
+            {navLinks.map((link) =>
+              link.type === "scroll" ? (
+                <a
+                  key={link.id}
+                  href={`/#${link.id}`}
+                  onClick={(e) => scrollToSection(e, link.id)}
+                  className="text-lg font-bold tracking-widest text-white hover:text-[#E5162D] transition-colors"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg font-bold tracking-widest text-white hover:text-[#E5162D] transition-colors"
+                >
+                  {link.name}
+                </a>
+              )
+            )}
+
+            <a
+              href="/#contact"
+              onClick={(e) => scrollToSection(e, "contact")}
               className="bg-[#E5162D] text-white py-4 rounded-xl font-black text-xs tracking-[0.2em]"
             >
               BOOK A TABLE
