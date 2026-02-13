@@ -107,7 +107,7 @@ export default function MenuPage() {
           </header>
 
           {/* ALLERGEN FILTER */}
-          <div className="mb-10 bg-white/5 p-4 rounded-2xl border border-white/10">
+          <div className="mb-10 bg-white/5 p-4 rounded-2xl border border-white/10 relative z-30">
             <h3 className="text-[10px] font-black mb-3 uppercase tracking-[0.2em] flex items-center gap-2 text-[#E5162D]">
               <X className="w-3 h-3" /> Filter by Allergens
             </h3>
