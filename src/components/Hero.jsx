@@ -128,7 +128,7 @@ export default function HeroSection() {
               </div>
 
               {/* Hover State - One by one display */}
-              <div className="absolute bottom-6 left-0 right-0 px-6 flex flex-col items-center opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-[-2px]">
+              <div className="absolute bottom-6 left-0 right-0 px-6 flex flex-col items-center opacity-0 transition-all duration-500 group-hover:opacity-100 group-active:opacity-100  group-hover:translate-y-[-2px] group-active:translate-y-[-2px]">
                 {Array.isArray(item.desc) ? (
                   <div className="flex flex-col gap-1 w-full text-center">
                     {item.desc.map((line, i) => (
