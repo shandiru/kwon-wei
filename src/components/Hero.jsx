@@ -33,9 +33,13 @@ export default function HeroSection() {
 
   return (
     <section
-      className="w-full min-h-screen bg-black text-white p-4 md:p-6 lg:p-8 pt-24 md:pt-28"
-      id="home"
+      id="#"
+      className="w-full min-h-screen text-white p-4 md:p-6 lg:p-8 pt-24 md:pt-28 bg-cover bg-center bg-no-repeat relative"
+      style={{
+        backgroundImage: "url('/bg.jpeg')",
+      }}
     >
+      <div className="absolute inset-0 bg-black/70 z-0" />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
         {/* ── LEFT — BIG HERO WITH VIDEO ── */}
