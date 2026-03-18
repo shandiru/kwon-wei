@@ -75,7 +75,7 @@ export default function Navbar() {
           </a>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] text-white/90">
+          <div className="hidden xl:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] text-white/90">
             {navLinks.map((link) =>
               link.type === "scroll" ? (
                 <Link
@@ -99,7 +99,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-6">
             <a
               href="/#contact"
               onClick={(e) => scrollToSection(e, "contact")}
@@ -110,7 +110,7 @@ export default function Navbar() {
           </div>
 
           {/* MOBILE TOGGLE */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white"
@@ -122,7 +122,7 @@ export default function Navbar() {
 
         {/* MOBILE MENU */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl">
+          <div className="xl:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl">
             {navLinks.map((link) =>
               link.type === "scroll" ? (
                 <a

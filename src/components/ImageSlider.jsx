@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
@@ -11,79 +11,122 @@ const images = [
   "i8.png",
   "i9.png",
   "i10.png",
-  "i11.png"
+  "i11.png",
 ];
+
+const GAP = 16; // px (1rem)
+
+const getVisibleCount = () => {
+  if (typeof window === "undefined") return 3;
+  if (window.innerWidth < 640) return 1;
+  if (window.innerWidth < 1024) return 2;
+  return 3;
+};
 
 const ImageSlider3 = () => {
   const [index, setIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount);
+  const [slideWidth, setSlideWidth] = useState(0);
+  const trackRef = useRef(null);
+  const touchStartX = useRef(null);
 
-  const prev = () => setIndex((index - 1 + images.length) % images.length);
-  const next = () => setIndex((index + 1) % images.length);
+  const recalcSlideWidth = useCallback((count) => {
+    if (!trackRef.current) return;
+    const containerWidth = trackRef.current.offsetWidth;
+    const sw = count === 1
+      ? containerWidth
+      : (containerWidth - GAP * (count - 1)) / count;
+    setSlideWidth(sw);
+  }, []);
+
+  // On mount — measure after first render
+  useEffect(() => {
+    recalcSlideWidth(visibleCount);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newCount = getVisibleCount();
+      setVisibleCount(newCount);
+      setIndex((prev) => Math.min(prev, images.length - newCount));
+      recalcSlideWidth(newCount);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [recalcSlideWidth]);
+
+  const maxIndex = images.length - visibleCount;
+  const prev = () => setIndex((i) => Math.max(i - 1, 0));
+  const next = () => setIndex((i) => Math.min(i + 1, maxIndex));
+
+  const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+    touchStartX.current = null;
+  };
+
+  const translateX = index * (slideWidth + (visibleCount === 1 ? 0 : GAP));
 
   return (
     <section
       id="gallery"
       className="relative py-20 overflow-hidden bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('/bg.jpeg')",
-      }}
+      style={{ backgroundImage: "url('/bg.jpeg')" }}
     >
-      {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/75 z-0" />
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* Header */}
-        <div className="text-center mb-12" data-aos="fade-down">
+        <div className="text-center mb-10 sm:mb-12" data-aos="fade-down">
           <h2 className="text-sm font-black text-[#E5162D] uppercase tracking-[0.3em] mb-2">
             Visual Journey
           </h2>
-          <p className="text-4xl font-serif text-white">Our Gallery</p>
+          <p className="text-3xl sm:text-4xl font-serif text-white">Our Gallery</p>
         </div>
 
-        <div
-          className="relative flex items-center"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
+        {/* Slider Wrapper */}
+        <div className="relative px-6 sm:px-8" data-aos="fade-up" data-aos-delay="200">
+
           {/* Left Arrow */}
           <button
             onClick={prev}
-            className="absolute -left-4 z-20 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 border border-white/10 bg-[#E5162D]"
+            disabled={index === 0}
+            aria-label="Previous"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 border border-white/10 bg-[#E5162D] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          {/* Slider */}
-          <div className="flex overflow-hidden w-full rounded-3xl">
+          {/* Track */}
+          <div
+            ref={trackRef}
+            className="overflow-hidden rounded-2xl sm:rounded-3xl"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
-              className="flex transition-transform duration-700 ease-in-out gap-6"
+              className="flex transition-transform duration-700 ease-in-out"
               style={{
-                transform: `translateX(-${index *
-                  (100 /
-                    (typeof window !== "undefined" &&
-                      window.innerWidth < 768
-                      ? 1
-                      : 3))
-                  }%)`,
+                transform: `translateX(-${translateX}px)`,
+                gap: visibleCount === 1 ? "0px" : `${GAP}px`,
               }}
             >
               {images.map((img, i) => (
                 <div
                   key={i}
-                  className="min-w-full md:min-w-[33.333%] sm:min-w-[50%] flex-shrink-0"
+                  className="flex-shrink-0"
+                  style={{ width: slideWidth > 0 ? `${slideWidth}px` : "100%" }}
                 >
-                  <div className="relative group overflow-hidden rounded-3xl h-[450px]">
+                  <div className="relative group overflow-hidden rounded-2xl sm:rounded-3xl h-[280px] sm:h-[360px] lg:h-[450px]">
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-
                     <img
                       src={img}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      className="w-full h-full object-top transition-transform duration-1000 group-hover:scale-110"
                       alt={`Gallery ${i + 1}`}
                     />
-
                     <div className="absolute inset-4 border border-white/0 group-hover:border-white/20 transition-all duration-500 rounded-2xl pointer-events-none z-20" />
                   </div>
                 </div>
@@ -94,23 +137,25 @@ const ImageSlider3 = () => {
           {/* Right Arrow */}
           <button
             onClick={next}
-            className="absolute -right-4 z-20 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 border border-white/10 bg-[#E5162D]"
+            disabled={index >= maxIndex}
+            aria-label="Next"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 border border-white/10 bg-[#E5162D] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 
         {/* Dots */}
         <div className="flex justify-center gap-2 mt-8" data-aos="fade-up">
-          {images.map((_, i) => (
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
+              aria-label={`Go to slide ${i + 1}`}
               className="h-1.5 rounded-full transition-all"
               style={{
                 width: index === i ? "24px" : "8px",
-                backgroundColor:
-                  index === i ? "#E5162D" : "rgba(255,255,255,0.2)",
+                backgroundColor: index === i ? "#E5162D" : "rgba(255,255,255,0.2)",
               }}
             />
           ))}
