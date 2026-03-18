@@ -31,7 +31,7 @@ const ReviewsSection = () => {
         <h2 className="text-sm tracking-[0.3em] font-bold" style={{ color: "#E5162D" }}>
           TESTIMONIALS
         </h2>
-        <h3 className="text-4xl md:text-5xl font-serif mt-3 text-white">
+        <h3 className="text-4xl md:text-5xl mt-3 text-white">
           Our Customers Love Us
         </h3>
         <div
@@ -97,7 +97,7 @@ const ReviewsSection = () => {
           }}
           onMouseEnter={(e) => (e.target.style.backgroundColor = "#E5162D")}
           onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent")}
-          onClick={() => window.open("https://www.google.com/search?sca_esv=2cf3e72a8cc0c0c9&rlz=1C1KNTJ_enLK1089LK1089&sxsrf=ANbL-n4fDwyNfOhcWrQa9jjd4K9ShxerYw:1770911004522&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xx6D-BkOXqUQAF7O5swuvA7e2-qUhl4rJrn6-cmgw4ngnWX7WvA2QzuenqSVMmKFTL-HWfKkDcDEh5VMP6X96s5r3Btrp1KLdmBWW86Qa-H7Fah-_w%3D%3D&q=Wong+Kwei+Restaurant+Reviews&sa=X&ved=2ahUKEwjYuunKpdSSAxVNm68BHSYVMjEQ0bkNegQILBAH&biw=1366&bih=633&dpr=1", "_blank")}
+          onClick={() => window.open("https://www.google.com/search?sca_esv=129340b3480a109d&sxsrf=ANbL-n5SlDd5gSVXRsjxzX60PA8TEKk1OQ:1773851125341&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xx6D-BkOXqUQAF7O5swuvA7e2-qUhl4rJrn6-cmgw4ngnWX7WvA2QzuenqSVMmKFTL-HWfKkDcDEh5VMP6X96s5r3Btrp1KLdmBWW86Qa-H7Fah-_w%3D%3D&q=Wong+Kwei+Restaurant+Reviews&sa=X&ved=2ahUKEwiEh9ex7qmTAxWHIhAIHW_iJ4UQ0bkNegQINRAH&biw=1366&bih=633&dpr=1", "_blank")}
         >
           READ MORE REVIEWS
         </button>

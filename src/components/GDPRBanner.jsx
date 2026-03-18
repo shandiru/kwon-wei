@@ -42,7 +42,7 @@ export default function GDPRConsent() {
         <div className="fixed bottom-6 right-6 max-w-sm p-6 bg-black text-white z-50 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-white/10 rounded-none">
           <h3 className="text-lg font-bold mb-2 tracking-tight">COOKIE SETTINGS</h3>
           <p className="text-xs mb-6 text-gray-400 leading-relaxed">
-            We use cookies to enhance your experience and analyze our traffic. 
+            We use cookies to enhance your experience and analyse our traffic. 
             By clicking "Accept", you consent to our use of cookies.{" "}
             <Link
               to="/privacy-policy"

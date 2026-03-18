@@ -1,221 +1,221 @@
- 
- import { ChefHat, Filter, Wheat, Nut, TreeDeciduous, Milk, Bean, Flower2, Leaf, Egg, Fish, Shell, Circle, Citrus, FlaskConical, Star, Flame, Phone, MapPin, Clock, TriangleAlert } from 'lucide-react';
- 
- export const allergens = [
-    { name: 'Gluten', icon: Wheat },
-    { name: 'Peanuts', icon: Nut },
-    { name: 'Tree Nuts', icon: TreeDeciduous },
-    { name: 'Milk', icon: Milk },
-    { name: 'Soy', icon: Bean },
-    { name: 'Mustard', icon: Flower2 },
-    { name: 'Lupin', icon: Leaf },
-    { name: 'Eggs', icon: Egg },
-    { name: 'Fish', icon: Fish },
-    { name: 'Crustaceans', icon: Shell },
-    { name: 'Molluscs', icon: Shell },
-    { name: 'Sesame', icon: Circle },
-    { name: 'Celery', icon: Citrus },
-    { name: 'Sulphites', icon: FlaskConical }
-  ];
+
+import { Wheat, Nut, TreeDeciduous, Milk, Bean, Flower2, Leaf, Egg, Fish, Shell, Circle, Citrus, FlaskConical, Star, Flame, Phone, MapPin, Clock, TriangleAlert } from 'lucide-react';
+
+export const allergens = [
+  { name: 'Gluten', icon: Wheat },
+  { name: 'Peanuts', icon: Nut },
+  { name: 'Tree Nuts', icon: TreeDeciduous },
+  { name: 'Milk', icon: Milk },
+  { name: 'Soy', icon: Bean },
+  { name: 'Mustard', icon: Flower2 },
+  { name: 'Lupin', icon: Leaf },
+  { name: 'Eggs', icon: Egg },
+  { name: 'Fish', icon: Fish },
+  { name: 'Crustaceans', icon: Shell },
+  { name: 'Molluscs', icon: Shell },
+  { name: 'Sesame', icon: Circle },
+  { name: 'Celery', icon: Citrus },
+  { name: 'Sulphites', icon: FlaskConical }
+];
 
 
- export const categories = [
-    { name: 'Appetisers', chinese: '前菜' },
-    { name: 'Soups', chinese: '汤类' },
-    { name: 'Chef Recommendations', chinese: '厨师推荐' },
-    { name: 'Seafood Dishes', chinese: '海鲜' },
-    { name: 'Beef Dishes', chinese: '牛肉' },
-    { name: 'Chicken Dishes', chinese: '鸡肉' },
-    { name: 'Duck Dishes', chinese: '鸭肉' },
-    { name: 'Pork Dishes', chinese: '猪肉' },
-    { name: 'Curry Dishes', chinese: '咖喱' },
-    { name: 'Vegetarian Dishes', chinese: '素菜' },
-    { name: 'Rice Dishes', chinese: '饭类' },
-    { name: 'Noodles (Chow Mein)', chinese: '面类' },
-    { name: 'Omelettes & Foo Yung', chinese: '蛋类' },
-    { name: 'Extras & Sides', chinese: '配菜' },
-    
-  ];
+export const categories = [
+  { name: 'Appetisers' },
+  { name: 'Soups' },
+  { name: 'Seasonal Chef Recommendations' },
+  { name: 'Seafood Dishes' },
+  { name: 'Beef Dishes' },
+  { name: 'Chicken Dishes' },
+  { name: 'Duck Dishes' },
+  { name: 'Pork Dishes' },
+  { name: 'Curry Dishes' },
+  { name: 'Vegetarian Dishes' },
+  { name: 'Rice Dishes' },
+  { name: 'Noodles (Chow Mein)' },
+  { name: 'English & Egg Dishes' },
+  { name: 'Foo Yung' },
+  { name: 'Extras & Sides' },
+
+];
 
 
-
-  export const menuItems = [
-      {
-        name: 'Prawn Cocktail',
-        price: '£7.20',
-        description: 'Cold dish served with battered wholemeal breads',
-        allergens: ['Gluten', 'Milk', 'Mustard', 'Eggs', 'Crustaceans'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Crispy Aromatic Duck',
-        price: '£25.80',
-        priceNote: 'for two',
-        description: 'Half a Duck with Spring Salad, Mandarin Pancakes and Hoisin Sauce',
-        allergens: ['Gluten', 'Soy', 'Sesame'],
-        category: 'Appetisers',
-        popular: true,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Crispy Aromatic Lamb',
-        price: '£14.50',
-        priceNote: 'for two',
-        description: 'Served with Iceberg Lettuce and Hoisin sauce',
-        allergens: ['Gluten', 'Soy'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Yuk Sung',
-        price: '£14.00',
-        priceNote: 'for two (small £8.50)',
-        description: 'Stir Fried minced pork served with Iceberg lettuce',
-        allergens: ['Gluten', 'Soy', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Mixed Appetisers',
-        price: '£17.80',
-        priceNote: 'for two (one £9.50)',
-        description: 'A selection of Crispy Won Tons, Seaweed, Spare Ribs, Pancake Rolls, Prawn Toast with Sweet and sour sauce',
-        allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame', 'Sulphites'],
-        category: 'Appetisers',
-        popular: true,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Deep Fried Squid',
-        price: '£9.20',
-        description: 'Salt and Chilli or Sweet and Sour',
-        allergens: ['Gluten', 'Eggs', 'Molluscs', 'Sesame', 'Sulphites'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 1
-      },
-      {
-        name: 'Sesame Prawn Toast',
-        price: '£9.20',
-        priceNote: 'small 4pc £6.00',
-        description: '8 Pieces of Square Cut Toast',
-        allergens: ['Gluten', 'Eggs', 'Crustaceans', 'Sesame'],
-        category: 'Appetisers',
-        popular: true,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Honey Spare Ribs',
-        price: '£9.50',
-        description: 'Peking Sauce, BBQ Sauce and Salt and Chilli also available',
-        allergens: ['Gluten', 'Soy', 'Fish', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Dim Sum',
-        price: '£7.60',
-        description: '6 Pieces – A Variation of Steamed Chinese Dumplings, Contains Pork and Prawns',
-        allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Smoked Chicken',
-        price: '£9.20',
-        description: 'Pieces of coated Chicken Marinated in Hoisin Sauce',
-        allergens: ['Gluten', 'Soy', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Grilled Pot Sticker Dumplings',
-        price: '£7.90',
-        description: '6 Pieces of Minced Pork Dumplings – Served with Ginger and Vinegar',
-        allergens: ['Gluten', 'Soy', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Grilled King Prawns with Garlic Butter',
-        price: '£9.50',
-        description: 'Off shell Tiger Prawns with Buttered Wholemeal Bread',
-        allergens: ['Gluten', 'Milk', 'Crustaceans', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Fried King Prawns Wrapped in Rice Paper',
-        price: '£9.50',
-        description: '5 Pieces, Served with Chilli Sauce',
-        allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Deep Fried Won Tons',
-        price: '£7.50',
-        description: '5 Pieces – Served with Sweet and Sour Sauce',
-        allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame', 'Sulphites'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
-        name: 'Crispy Seaweed',
-        price: '£6.50',
-        description: 'Crispy fried seaweed with seasoning',
-        allergens: ['Gluten', 'Soy'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: true,
-        spiceLevel: 0
-      },
-      {
-        name: 'Vegetable Pancake Rolls',
-        price: '£6.80',
-        description: '4 Pieces, Bamboo Shoots, Carrots and Cabbage',
-        allergens: ['Gluten', 'Milk', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: true,
-        spiceLevel: 0
-      },
-      {
-        name: 'Chicken Satay on Skewers',
-        price: '£7.50',
-        description: '3 Pieces with peanut sauce',
-        allergens: ['Gluten', 'Peanuts', 'Soy', 'Eggs', 'Fish', 'Crustaceans', 'Sesame'],
-        category: 'Appetisers',
-        popular: false,
-        vegetarian: false,
-        spiceLevel: 0
-      },
-      {
+export const menuItems = [
+  {
+    name: 'Prawn Cocktail',
+    price: '£7.20',
+    description: 'Cold dish served with battered wholemeal breads',
+    allergens: ['Gluten', 'Milk', 'Mustard', 'Eggs', 'Crustaceans'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Crispy Aromatic Duck',
+    price: '£25.80',
+    priceNote: 'for two',
+    description: 'Half a Duck with Spring Salad, Mandarin Pancakes and Hoisin Sauce',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Appetisers',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Crispy Aromatic Lamb',
+    price: '£14.50',
+    priceNote: 'for two',
+    description: 'Served with Iceberg Lettuce and Hoisin sauce',
+    allergens: ['Gluten', 'Soy'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Yuk Sung',
+    price: '£14.00',
+    priceNote: 'for two (small £8.50)',
+    description: 'Stir Fried minced pork served with Iceberg lettuce',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Mixed Appetisers',
+    price: '£17.80',
+    priceNote: 'for two (one £9.50)',
+    description: 'A selection of Crispy Won Tons, Seaweed, Spare Ribs, Pancake Rolls, Prawn Toast with Sweet and sour sauce',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame', 'Sulphites'],
+    category: 'Appetisers',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Deep Fried Squid',
+    price: '£9.20',
+    description: 'Salt and Chilli or Sweet and Sour',
+    allergens: ['Gluten', 'Eggs', 'Molluscs', 'Sesame', 'Sulphites'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 1
+  },
+  {
+    name: 'Sesame Prawn Toast',
+    price: '£9.20',
+    priceNote: 'small 4pc £6.00',
+    description: '8 Pieces of Square Cut Toast',
+    allergens: ['Gluten', 'Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Appetisers',
+    popular: true,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Honey Spare Ribs',
+    price: '£9.50',
+    description: 'Peking Sauce, BBQ Sauce and Salt and Chilli also available',
+    allergens: ['Gluten', 'Soy', 'Fish', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Dim Sum',
+    price: '£7.60',
+    description: '6 Pieces – A Variation of Steamed Chinese Dumplings, Contains Pork and Prawns',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Smoked Chicken',
+    price: '£9.20',
+    description: 'Pieces of coated Chicken Marinated in Hoisin Sauce',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Grilled Pot Sticker Dumplings',
+    price: '£7.90',
+    description: '6 Pieces of Minced Pork Dumplings – Served with Ginger and Vinegar',
+    allergens: ['Gluten', 'Soy', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Grilled King Prawns with Garlic Butter',
+    price: '£9.50',
+    description: 'Off shell Tiger Prawns with Buttered Wholemeal Bread',
+    allergens: ['Gluten', 'Milk', 'Crustaceans', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Fried King Prawns Wrapped in Rice Paper',
+    price: '£9.50',
+    description: '5 Pieces, Served with Chilli Sauce',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Deep Fried Won Tons',
+    price: '£7.50',
+    description: '5 Pieces – Served with Sweet and Sour Sauce',
+    allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame', 'Sulphites'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Crispy Seaweed',
+    price: '£6.50',
+    description: 'Crispy fried seaweed with seasoning',
+    allergens: ['Gluten', 'Soy'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Vegetable Pancake Rolls',
+    price: '£6.80',
+    description: '4 Pieces, Bamboo Shoots, Carrots and Cabbage',
+    allergens: ['Gluten', 'Milk', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: true,
+    spiceLevel: 0
+  },
+  {
+    name: 'Chicken Satay on Skewers',
+    price: '£7.50',
+    description: '3 Pieces with peanut sauce',
+    allergens: ['Gluten', 'Peanuts', 'Soy', 'Eggs', 'Fish', 'Crustaceans', 'Sesame'],
+    category: 'Appetisers',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
     name: 'Chicken Noodle Soup',
     price: '£5.80',
     description: 'Clear soup with chicken and noodles',
@@ -285,13 +285,13 @@
     vegetarian: true,
     spiceLevel: 0
   },
-  
- {
+
+  {
     name: 'Salt & Chilli Chicken Wings',
     price: '£11.80',
     description: 'Crispy chicken wings with salt and chilli seasoning',
     allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
-    category: 'Chef Recommendations',
+    category: 'Seasonal Chef Recommendations',
     popular: true,
     vegetarian: false,
     spiceLevel: 2
@@ -301,7 +301,7 @@
     price: '£11.80',
     description: 'Chicken wings glazed with BBQ sauce',
     allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
-    category: 'Chef Recommendations',
+    category: 'Seasonal Chef Recommendations',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
@@ -311,7 +311,7 @@
     price: '£13.80',
     description: 'King Prawn and Chicken in Oyster Sauce',
     allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
-    category: 'Chef Recommendations',
+    category: 'Seasonal Chef Recommendations',
     popular: true,
     vegetarian: false,
     spiceLevel: 0
@@ -321,7 +321,7 @@
     price: '£12.50',
     description: 'Crispy fried chicken with garlic butter sauce',
     allergens: ['Milk', 'Soy', 'Eggs', 'Sesame'],
-    category: 'Chef Recommendations',
+    category: 'Seasonal Chef Recommendations',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
@@ -331,7 +331,7 @@
     price: '£12.30',
     description: 'Sweet and tangy chicken with pickled ginger',
     allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame', 'Sulphites'],
-    category: 'Chef Recommendations',
+    category: 'Seasonal Chef Recommendations',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
@@ -341,7 +341,7 @@
     price: '£18.00',
     description: 'Premium fillet steak with Japanese teriyaki glaze',
     allergens: ['Gluten', 'Soy', 'Sesame'],
-    category: 'Chef Recommendations',
+    category: 'Seasonal Chef Recommendations',
     popular: true,
     vegetarian: false,
     spiceLevel: 0
@@ -351,13 +351,143 @@
     price: '£13.30',
     description: 'Crispy chicken with teriyaki glaze',
     allergens: ['Gluten', 'Soy', 'Eggs', 'Crustaceans', 'Sesame'],
-    category: 'Chef Recommendations',
+    category: 'Seasonal Chef Recommendations',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
   },
-  
- 
+
+
+  {
+    name: 'House Special Seafood in Oyster Sauce and Seasonal Vegetables',
+    price: '£14.50',
+    description: 'Mussels, king prawns and squid in oyster sauce with seasonal vegetables',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'King Prawns Green Pepper and Black Bean Sauce in a Bird\'s Nest',
+    price: '£14.50',
+    description: 'King prawns with green pepper and black bean sauce served in a bird\'s nest',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'King Prawns Ginger and Spring Onions',
+    price: '£13.50',
+    description: 'King prawns stir-fried with ginger and spring onions',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'King Prawns with Green Pepper and Black Bean Sauce on a Hot Platter',
+    price: '£13.50',
+    description: 'King prawns with green pepper and black bean sauce served sizzling on a hot platter',
+    allergens: ['Gluten', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'King Prawns with Cashew Nuts',
+    price: '£14.80',
+    description: 'King prawns stir-fried with cashew nuts',
+    allergens: ['Gluten', 'Nuts', 'Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Kung Po King Prawns',
+    price: '£14.80',
+    description: 'King prawns cooked kung po style with chilli and spices',
+    allergens: ['Gluten', 'Nuts', 'Soy', 'Crustaceans', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Sweet and Sour King Prawn Balls',
+    price: '£14.80',
+    description: 'Crispy king prawn balls in a classic sweet and sour sauce',
+    allergens: ['Gluten', 'Crustaceans', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Sweet & Sour King Prawns Cantonese Style',
+    price: '£13.50',
+    description: 'King prawns in sweet and sour sauce Cantonese style',
+    allergens: ['Eggs', 'Crustaceans', 'Sesame', 'Sulphites'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Salt and Chilli King Prawns',
+    price: '£14.00',
+    description: 'Off-shell king prawns, dry dish with salt and chilli',
+    allergens: ['Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'King Prawns in Garlic and Chilli Sauce',
+    price: '£14.00',
+    description: 'King prawns in a fragrant garlic and chilli sauce',
+    allergens: ['Soy', 'Eggs', 'Crustaceans', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Fried King Prawns in Chilli Bean Sauce',
+    price: '£13.50',
+    description: 'King prawns fried in a spicy chilli bean sauce',
+    allergens: ['Soy', 'Crustaceans', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 2
+  },
+  {
+    name: 'Scallops Fried with Ginger and Spring Onions',
+    price: '£19.90',
+    description: 'Scallops stir-fried with ginger and spring onions',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
+  {
+    name: 'Scallops Fried with Broccoli',
+    price: '£19.90',
+    description: 'Scallops stir-fried with fresh broccoli',
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
+    category: 'Seafood Dishes',
+    popular: false,
+    vegetarian: false,
+    spiceLevel: 0
+  },
   {
     name: 'Monk Fish Fried with Ginger and Spring Onions',
     price: '£17.80',
@@ -369,7 +499,7 @@
     spiceLevel: 0
   },
   {
-    name: 'Monk Fish in Oyster Sauce',
+    name: 'Monk Fish in Oyster Sauce and Seasonal Vegetables',
     price: '£17.80',
     description: 'Monk fish with oyster sauce and seasonal vegetables',
     allergens: ['Gluten', 'Soy', 'Fish', 'Molluscs', 'Sesame'],
@@ -518,7 +648,7 @@
     vegetarian: false,
     spiceLevel: 0
   },
-  
+
   {
     name: 'Chicken Fried in Chilli Bean Sauce',
     price: '£12.50',
@@ -749,7 +879,7 @@
     vegetarian: false,
     spiceLevel: 0
   },
-{
+  {
     name: 'Deep Fried Pork in Peking Sauce',
     price: '£12.30',
     description: 'Crispy pork in rich Peking sauce',
@@ -849,7 +979,7 @@
     vegetarian: true,
     spiceLevel: 2
   },
-   {
+  {
     name: 'Mixed Vegetables Yuk Sung',
     price: '£14.00',
     description: 'Stir fried vegetables served with iceberg lettuce',
@@ -897,7 +1027,7 @@
     allergens: ['Gluten', 'Soy', 'Crustaceans'],
     category: 'Vegetarian Dishes',
     popular: false,
-    vegetarian: false, // 10 (Crustaceans) இருப்பதால் இது மாமிசம் கலந்தது
+    vegetarian: false,
     spiceLevel: 2
   },
   {
@@ -907,7 +1037,7 @@
     allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
     category: 'Vegetarian Dishes',
     popular: false,
-    vegetarian: false, // 11 (Molluscs/Oyster) இருப்பதால் இது மாமிசம் கலந்தது
+    vegetarian: false,
     spiceLevel: 0
   },
   {
@@ -920,7 +1050,7 @@
     vegetarian: true,
     spiceLevel: 0
   },
- {
+  {
     name: 'House Special Fried Rice',
     price: '£14.20',
     description: 'Egg Fried Rice topped with Chicken, Beef and King Prawns with Mix Vegetables in Oyster Sauce',
@@ -1033,7 +1163,7 @@
     vegetarian: true,
     spiceLevel: 0
   },
-{
+  {
     name: 'House Special Chow Mein',
     price: '£14.50',
     description: 'Stir Fried soft Noodles topped with Chicken, Beef and King Prawns with Mix Vegetables in Oyster Sauce',
@@ -1164,7 +1294,7 @@
     spiceLevel: 0
   },
   {
-    name: 'Stir Fried Vermicelli',
+    name: 'Stir Fried Soft Rice Noodles (Vermicelli)',
     price: '£6.60',
     description: 'Plain stir fried rice noodles',
     allergens: ['Gluten', 'Soy', 'Sesame'],
@@ -1184,13 +1314,13 @@
     spiceLevel: 0
   },
 
-  // Omelettes & Foo Yung
+  // englishAndEggDishes 
   {
     name: 'King Prawn Omelette',
     price: '£14.00',
-    description: 'Omelette with king prawns, served with chips and peas',
-    allergens: ['Eggs', 'Crustaceans', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    description: 'King prawn omelette served with chips and peas',
+    allergens: ['Eggs', 'Sesame'],
+    category: 'English & Egg Dishes',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
@@ -1198,9 +1328,9 @@
   {
     name: 'Chicken Omelette',
     price: '£13.00',
-    description: 'Omelette with chicken, served with chips and peas',
+    description: 'Chicken omelette served with chips and peas',
     allergens: ['Eggs', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    category: 'English & Egg Dishes',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
@@ -1208,9 +1338,9 @@
   {
     name: 'Mushroom Omelette',
     price: '£12.50',
-    description: 'Omelette with mushrooms, served with chips and peas',
+    description: 'Mushroom omelette served with chips and peas',
     allergens: ['Eggs', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    category: 'English & Egg Dishes',
     popular: false,
     vegetarian: true,
     spiceLevel: 0
@@ -1218,19 +1348,21 @@
   {
     name: 'Plain Omelette',
     price: '£12.00',
-    description: 'Plain omelette, served with chips and peas',
+    description: 'Plain omelette served with chips and peas',
     allergens: ['Eggs', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    category: 'English & Egg Dishes',
     popular: false,
     vegetarian: true,
     spiceLevel: 0
   },
+
+  //Foo Yung
   {
     name: 'King Prawn Foo Yung',
     price: '£13.50',
-    description: 'Chinese style omelette with prawns',
+    description: 'All Omelettes come with Chips and Peas',
     allergens: ['Eggs', 'Crustaceans', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    category: 'Foo Yung',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
@@ -1238,9 +1370,9 @@
   {
     name: 'Chicken Foo Yung',
     price: '£12.50',
-    description: 'Chinese style omelette with chicken',
+    description: 'All Omelettes come with Chips and Peas',
     allergens: ['Eggs', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    category: 'Foo Yung',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
@@ -1248,9 +1380,9 @@
   {
     name: 'Mushroom Foo Yung',
     price: '£12.00',
-    description: 'Chinese style omelette with mushrooms',
+    description: 'All Omelettes come with Chips and Peas',
     allergens: ['Eggs', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    category: 'Foo Yung',
     popular: false,
     vegetarian: true,
     spiceLevel: 0
@@ -1258,20 +1390,20 @@
   {
     name: 'Plain Foo Yung',
     price: '£11.50',
-    description: 'Plain Chinese style omelette',
+    description: 'All Omelettes come with Chips and Peas',
     allergens: ['Eggs', 'Sesame'],
-    category: 'Omelettes & Foo Yung',
+    category: 'Foo Yung',
     popular: false,
     vegetarian: true,
     spiceLevel: 0
   },
- 
+
   // Extras & Sides
   {
     name: 'Mushrooms with Oyster Sauce',
     price: '£7.50',
     description: 'Stir fried mushrooms in oyster sauce',
-    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'], // 1, 5, 11, 12
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: false,
@@ -1281,17 +1413,17 @@
     name: 'Fried Beansprouts',
     price: '£7.50',
     description: 'Stir fried fresh beansprouts',
-    allergens: ['Molluscs', 'Sesame'], // 11, 12 (Note: 15 was in text but not in key, assuming 11/12)
+    allergens: ['Molluscs', 'Sesame'],
     category: 'Extras & Sides',
     popular: false,
-    vegetarian: false, // Oyster sauce 11 makes it non-veg
+    vegetarian: false,
     spiceLevel: 0
   },
   {
     name: 'Bamboo Shoots and Water Chestnuts',
     price: '£7.50',
     description: 'Stir fried bamboo shoots and water chestnuts',
-    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'], // 1, 5, 11, 12
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: false,
@@ -1301,7 +1433,7 @@
     name: 'Fried Onions',
     price: '£7.50',
     description: 'Stir fried onions',
-    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'], // 1, 5, 11, 12
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: false,
@@ -1311,7 +1443,7 @@
     name: 'Mixed Seasonal Vegetables',
     price: '£9.00',
     description: 'Selection of fresh seasonal vegetables',
-    allergens: ['Gluten', 'Soy', 'Sesame'], // 1, 5, 12
+    allergens: ['Gluten', 'Soy', 'Sesame'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: true,
@@ -1331,7 +1463,7 @@
     name: 'Curry Sauce',
     price: '£3.20',
     description: 'Classic Chinese curry sauce',
-    allergens: ['Gluten', 'Soy', 'Celery'], // 1, 5, 13
+    allergens: ['Gluten', 'Soy', 'Celery'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: true,
@@ -1341,7 +1473,7 @@
     name: 'Sweet and Sour Sauce',
     price: '£3.20',
     description: 'Tangy sweet and sour sauce',
-    allergens: ['Sulphites'], // 14
+    allergens: ['Sulphites'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: true,
@@ -1351,7 +1483,7 @@
     name: 'Peking Sauce',
     price: '£3.20',
     description: 'Rich Peking style sauce',
-    allergens: ['Gluten', 'Celery'], // 1, 13
+    allergens: ['Gluten', 'Celery'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: true,
@@ -1361,7 +1493,7 @@
     name: 'Black Bean Sauce',
     price: '£3.20',
     description: 'Savory black bean sauce',
-    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'], // 1, 5, 11, 12
+    allergens: ['Gluten', 'Soy', 'Molluscs', 'Sesame'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: false,
@@ -1401,7 +1533,7 @@
     name: 'Prawn Crackers (Small)',
     price: '£2.80',
     description: 'Crispy prawn crackers',
-    allergens: ['Crustaceans'], // 10
+    allergens: ['Crustaceans'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: false,
@@ -1411,18 +1543,17 @@
     name: 'Prawn Crackers (Large)',
     price: '£4.60',
     description: 'Crispy prawn crackers - large portion',
-    allergens: ['Crustaceans'], // 10
+    allergens: ['Crustaceans'],
     category: 'Extras & Sides',
     popular: false,
     vegetarian: false,
     spiceLevel: 0
   }
-
-    ];
-  
+];
 
 
-  export  const setMenus = [
+
+export const setMenus = [
   {
     name: "Set Meal A for Two",
     category: "Special Set Menu",

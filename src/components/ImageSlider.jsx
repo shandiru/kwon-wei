@@ -84,7 +84,7 @@ const ImageSlider3 = () => {
           <h2 className="text-sm font-black text-[#E5162D] uppercase tracking-[0.3em] mb-2">
             Visual Journey
           </h2>
-          <p className="text-3xl sm:text-4xl font-serif text-white">Our Gallery</p>
+          <p className="text-3xl sm:text-4xl text-white">Our Gallery</p>
         </div>
 
         {/* Slider Wrapper */}

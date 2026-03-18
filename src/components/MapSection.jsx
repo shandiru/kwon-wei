@@ -31,7 +31,7 @@ export default function MapSection() {
               <h2 className="text-sm font-black text-[#E5162D] uppercase tracking-[0.4em] mb-4">
                 Location
               </h2>
-              <h3 className="text-5xl md:text-6xl font-serif text-white mb-6">
+              <h3 className="text-5xl md:text-6xl text-white mb-6">
                 Find Us
               </h3>
               <p className="text-gray-300 leading-relaxed font-light">

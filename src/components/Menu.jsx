@@ -91,7 +91,7 @@ export default function MenuPage() {
             alt="Chinese Cuisine"
           />
           <div className="absolute bottom-10 left-10 z-20 hidden lg:block">
-            <h2 className="text-4xl font-serif">Taste of Tradition</h2>
+            <h2 className="text-4xl">Taste of Tradition</h2>
             <p className="mt-2 italic text-[#E5162D]">
               Exquisite Cantonese Flavours
             </p>
@@ -101,7 +101,7 @@ export default function MenuPage() {
         {/* RIGHT CONTENT SECTION */}
         <div className="w-full lg:w-[60%] px-6 md:px-16 py-12 lg:py-20">
           <header className="mb-12">
-            <h1 className="text-6xl font-serif mb-4">Our Menu</h1>
+            <h1 className="text-6xl mb-4">Our Menu</h1>
             <p className="text-gray-400 max-w-md">
               Please call us if you would like any adjustments to suit your
               allergen requirements
@@ -123,11 +123,10 @@ export default function MenuPage() {
                   <button
                     key={allergen.name}
                     onClick={() => toggleAllergen(allergen.name)}
-                    className={`px-3 py-1.5 rounded-lg text-[11px] font-bold flex items-center gap-2 border transition-all ${
-                      active
+                    className={`px-3 py-1.5 rounded-lg text-[11px] font-bold flex items-center gap-2 border transition-all ${active
                         ? "bg-[#E5162D] text-white border-transparent"
                         : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10"
-                    }`}
+                      }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
                     {allergen.name}
@@ -155,11 +154,10 @@ export default function MenuPage() {
               >
                 <button
                   onClick={() => setSelectedCategory("Special Set Menu")}
-                  className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
-                    selectedCategory === "Special Set Menu"
+                  className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${selectedCategory === "Special Set Menu"
                       ? "text-white border-transparent"
                       : "border-white/10 text-white hover:border-white/40"
-                  }`}
+                    }`}
                   style={
                     selectedCategory === "Special Set Menu"
                       ? { backgroundColor: "#E5162D" }
@@ -173,11 +171,10 @@ export default function MenuPage() {
                   <button
                     key={cat.name}
                     onClick={() => setSelectedCategory(cat.name)}
-                    className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${
-                      selectedCategory === cat.name
+                    className={`whitespace-nowrap px-6 lg:px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest border transition-all flex-shrink-0 ${selectedCategory === cat.name
                         ? "text-white border-transparent"
                         : "border-white/10 text-white hover:border-white/40"
-                    }`}
+                      }`}
                     style={
                       selectedCategory === cat.name
                         ? { backgroundColor: "#E5162D" }
@@ -217,13 +214,48 @@ export default function MenuPage() {
                 {setMenus.map((set, i) => (
                   <div
                     key={i}
-                    className="border border-white/10 rounded-3xl p-8 bg-white/5 hover:bg-white/10 transition-colors"
+                    className="border border-white/10 rounded-3xl p-8 bg-white/5 hover:bg-white/10 transition-all duration-300 group"
                   >
-                    <h3 className="text-2xl font-serif">{set.name}</h3>
-                    <p className="text-[#E5162D] mt-2 font-bold">{set.price}</p>
-                    {set.items && (
-                        <p className="text-gray-400 text-sm mt-3 italic">{set.items}</p>
-                    )}
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                      <div>
+                        <h3 className="text-2xl md:text-3xl text-white group-hover:text-[#E5162D] transition-colors">
+                          {set.name}
+                        </h3>
+                        <p className="text-gray-400 text-sm tracking-widest uppercase mt-1">
+                          Minimum for {set.people} people
+                        </p>
+                      </div>
+                      <p className="text-2xl font-bold text-[#E5162D]">
+                        {set.price}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {/* STARTERS SECTION */}
+                      <div>
+                        <h4 className="text-xs font-black tracking-[0.2em] text-white/40 uppercase mb-3 flex items-center gap-2">
+                          <span className="w-8 h-[1px] bg-white/20"></span> Starters
+                        </h4>
+                        <p className="text-gray-300 leading-relaxed italic">
+                          {set.starters}
+                        </p>
+                      </div>
+
+                      {/* MAIN COURSES SECTION */}
+                      <div>
+                        <h4 className="text-xs font-black tracking-[0.2em] text-white/40 uppercase mb-3 flex items-center gap-2">
+                          <span className="w-8 h-[1px] bg-white/20"></span> Main Courses
+                        </h4>
+                        <ul className="space-y-2">
+                          {set.mainCourses.map((course, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-gray-300">
+                              <span className="text-[#E5162D] mt-1.5 w-1.5 h-1.5 rounded-full bg-[#E5162D] shrink-0" />
+                              {course}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>

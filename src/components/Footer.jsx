@@ -7,11 +7,19 @@ export default function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Unified Scroll Function
+  // Unified Scroll Function - Matches Navbar Logic
   const scrollToSection = (e, id) => {
     const isHomePage = location.pathname === "/";
 
-    if (isHomePage) {
+    // If it's the home link (empty id) and we are already on the home page, scroll to top
+    if (isHomePage && !id) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.pushState(null, "", "/");
+      return;
+    }
+
+    if (isHomePage && id) {
       e.preventDefault();
       const element = document.getElementById(id);
       if (element) {
@@ -28,15 +36,12 @@ export default function Footer() {
         // Update URL hash without jumping
         window.history.pushState(null, "", `/#${id}`);
       }
-    } else {
-      // If not on home page, let the Link component handle navigation to /#id
-      // React Router will handle the initial mount scroll if you have a scroll restoration component
     }
   };
 
   const exploreLinks = [
-    { name: "Home", id: "", type: "scroll" },
-    { name: "About", path: "/about", type: "page" }, // Links to about page
+    { name: "Home", path: "/", id: "", type: "scroll" }, // Updated path to "/"
+    { name: "About", path: "/about", type: "page" },
     { name: "Menu", id: "menu", type: "scroll" },
     { name: "Gallery", id: "gallery", type: "scroll" },
     { name: "Reviews", path: "/reviews", type: "page" },
@@ -44,7 +49,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black text-white border-t border-white/10 pt-16 pb-8 font-sans">
+    <footer className="bg-black text-white border-t border-white/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
@@ -65,7 +70,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 2. QUICK LINKS (EXPLORE) - UPDATED LOGIC */}
+          {/* 2. QUICK LINKS (EXPLORE) */}
           <div>
             <h3 className="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50">Explore</h3>
             <ul className="space-y-4 text-sm text-gray-400">
@@ -73,7 +78,7 @@ export default function Footer() {
                 <li key={link.name}>
                   {link.type === "scroll" ? (
                     <Link
-                      to={`/#${link.id}`}
+                      to={link.path || `/#${link.id}`}
                       onClick={(e) => scrollToSection(e, link.id)}
                       className="hover:text-[#E5162D] transition-colors cursor-pointer"
                     >
@@ -98,7 +103,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-gray-400">
               <li>
                 <a
-                  href="https://maps.app.goo.gl/Tdg5RDs5SqCnXGhV7"
+                  href="https://maps.google.com/?q=9+Bath+St,Ashby-de-la-Zouch,LE65+2FH"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 transition-colors"
@@ -110,7 +115,6 @@ export default function Footer() {
                   </span>
                 </a> 
               </li>
-
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-[#E5162D] shrink-0" />
                 <a href="tel:+441530412394" className="hover:text-white transition-colors">

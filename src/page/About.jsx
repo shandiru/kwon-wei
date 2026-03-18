@@ -36,12 +36,12 @@ export default function AboutUs() {
 
         {/* Title - Changed to White with Red Highlight */}
         <h2 
-          className="text-3xl md:text-[40px] font-serif leading-tight text-white uppercase tracking-tight"
+          className="text-3xl md:text-[40px] leading-tight text-white uppercase tracking-tight"
           data-aos="fade-up"
           data-aos-delay="200"
         >
           Wong Kwei <span style={{ color: "#E5162D" }}>CHINESE RESTAURANT</span>
-          <span className="block text-lg font-sans font-light tracking-[0.3em] mt-2 text-gray-400">
+          <span className="block text-lg  font-light tracking-[0.3em] mt-2 text-gray-400">
             Ashby-de-la-Zouch
           </span>
         </h2>

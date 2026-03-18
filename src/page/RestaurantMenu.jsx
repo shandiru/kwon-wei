@@ -47,9 +47,9 @@ const RestaurantMenu = () => {
           />
 
           <div className="text-center mb-10">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">{activeCategory}</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">{activeCategory}</h2>
             {currentCategoryData && (
-              <p className="text-xl text-amber-500 font-serif mt-2">{currentCategoryData.chinese}</p>
+              <p className="text-xl text-amber-500 mt-2">{currentCategoryData.chinese}</p>
             )}
           </div>
 

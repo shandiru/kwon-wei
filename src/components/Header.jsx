@@ -58,7 +58,7 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: "HOME", path: "/", id: "", type: "scroll" }, // Updated path to "/"
+    { name: "HOME", path: "/", id: "", type: "scroll" }, 
     { name: "ABOUT", path: "/about", type: "page" },
     { name: "MENU", id: "menu", type: "scroll" },
     { name: "GALLERY", id: "gallery", type: "scroll" },
@@ -87,7 +87,7 @@ export default function Navbar() {
             onClick={(e) => scrollToSection(e, "")}
             className="flex items-center gap-2"
           >
-            <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif uppercase">
+            <h2 className="text-2xl tracking-[0.2em] font-bold text-white uppercase">
               Wong Kwei
             </h2>
           </Link>

@@ -33,13 +33,13 @@ const VenueBookingForm = () => {
       )
       .then(
         (result) => {
-          setSuccess("Booking inquiry sent successfully!");
+          setSuccess("Booking Enquiry sent successfully!");
           form.reset();
           setTimeout(() => setSuccess(""), 5000);
         },
         (error) => {
           console.error("EmailJS Error:", error);
-          alert("Failed to send inquiry. Please try again later.");
+          alert("Failed to send Enquiry. Please try again later.");
         }
       )
       .finally(() => setLoading(false));
@@ -63,7 +63,7 @@ const VenueBookingForm = () => {
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 uppercase tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 uppercase tracking-tight">
             Basic Event <span className="text-[#E5162D]">Details</span>
           </h2>
           <div className="w-20 h-1 bg-[#E5162D] mx-auto rounded-full" />
@@ -226,7 +226,7 @@ const VenueBookingForm = () => {
                     "Sending..."
                   ) : (
                     <>
-                      Submit Inquiry{" "}
+                      Submit Enquiry{" "}
                       <Send
                         size={18}
                         className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform duration-300"

@@ -65,7 +65,7 @@ const OccasionSection = () => {
 
               <div className="p-6">
                 <h3 
-                  className="text-xl font-serif mb-3 transition-colors duration-300 group-hover:text-[#E5162D]"
+                  className="text-xl mb-3 transition-colors duration-300 group-hover:text-[#E5162D]"
                   style={{ color: "#E5162D" }}
                 >
                   {card.title}
