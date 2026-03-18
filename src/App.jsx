@@ -43,7 +43,7 @@ function App() {
       <a
         href="tel:+441530412394"
         rel="noopener noreferrer"
-        className="fixed bottom-20 right-4 md:right-7 z-50 border w-12 h-12 items-center text-white flex justify-center hover:bg-[#E5162D] transition-all duration-300 group shadow-xl rounded-full hover:scale-110"
+        className="fixed bottom-20 right-6 md:right-7 z-50 border w-12 h-12 items-center text-white flex justify-center hover:bg-[#E5162D] transition-all duration-300 group shadow-xl rounded-full hover:scale-110"
         aria-label="Call Us"
       >
         <FaPhoneAlt size={20} />

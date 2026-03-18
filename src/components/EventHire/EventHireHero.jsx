@@ -69,7 +69,7 @@ const OccasionSection = () => {
                 >
                   {card.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                   {card.desc}
                 </p>
               </div>

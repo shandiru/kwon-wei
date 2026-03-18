@@ -5,7 +5,7 @@ const EventHire = () => {
     return (
         <div>
             <OccasionSection />
-            < VenueBookingForm />
+            <VenueBookingForm />
         </div>
     )
 }

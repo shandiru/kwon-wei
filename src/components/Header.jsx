@@ -1,46 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll only for home sections
+  // Close on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
   const scrollToSection = (e, id) => {
     const isHomePage = window.location.pathname === "/";
-
     if (isHomePage) {
       const element = document.getElementById(id);
       if (element) {
         e.preventDefault();
-
         const offset = 80;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
         const position = elementRect - bodyRect - offset;
-
-        window.scrollTo({
-          top: position,
-          behavior: "smooth",
-        });
-
-        setMobileMenuOpen(false);
+        window.scrollTo({ top: position, behavior: "smooth" });
         window.history.pushState(null, "", `/#${id}`);
       }
     }
+    setMobileMenuOpen(false);
   };
 
   const navLinks = [
-    { name: "HOME", id: "", type: "scroll" },
+    { name: "HOME", id: "home", type: "scroll" },
     { name: "ABOUT", path: "/about", type: "page" },
     { name: "MENU", id: "menu", type: "scroll" },
     { name: "GALLERY", id: "gallery", type: "scroll" },
@@ -55,7 +63,7 @@ export default function Navbar() {
         isScrolled ? "py-3" : "py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8" ref={menuRef}>
         <div
           className={`flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-500 ${
             isScrolled
@@ -64,15 +72,15 @@ export default function Navbar() {
           }`}
         >
           {/* LOGO */}
-          <a
-            href="/#home"
+          <Link
+            to="/#home"
             onClick={(e) => scrollToSection(e, "home")}
             className="flex items-center gap-2"
           >
             <h2 className="text-2xl tracking-[0.2em] font-bold text-white font-serif uppercase">
               Wong Kwei
             </h2>
-          </a>
+          </Link>
 
           {/* DESKTOP MENU */}
           <div className="hidden xl:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] text-white/90">
@@ -100,13 +108,13 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden xl:flex items-center gap-6">
-            <a
-              href="/#contact"
+            <Link
+              to="/#contact"
               onClick={(e) => scrollToSection(e, "contact")}
               className="bg-white text-black px-6 py-2.5 rounded-full text-[10px] font-black tracking-widest hover:bg-[#E5162D] hover:text-white transition-all duration-300"
             >
               BOOK A TABLE
-            </a>
+            </Link>
           </div>
 
           {/* MOBILE TOGGLE */}
@@ -122,36 +130,36 @@ export default function Navbar() {
 
         {/* MOBILE MENU */}
         {mobileMenuOpen && (
-          <div className="xl:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl">
+          <div className="xl:hidden absolute top-full left-4 right-4 mt-2 bg-black border border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl rounded-2xl">
             {navLinks.map((link) =>
               link.type === "scroll" ? (
-                <a
+                <Link
                   key={link.id}
-                  href={`/#${link.id}`}
+                  to={`/#${link.id}`}
                   onClick={(e) => scrollToSection(e, link.id)}
                   className="text-lg font-bold tracking-widest text-white hover:text-[#E5162D] transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               ) : (
-                <a
+                <Link
                   key={link.path}
-                  href={link.path}
+                  to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-lg font-bold tracking-widest text-white hover:text-[#E5162D] transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               )
             )}
 
-            <a
-              href="/#contact"
+            <Link
+              to="/#contact"
               onClick={(e) => scrollToSection(e, "contact")}
               className="bg-[#E5162D] text-white py-4 rounded-xl font-black text-xs tracking-[0.2em]"
             >
               BOOK A TABLE
-            </a>
+            </Link>
           </div>
         )}
       </div>

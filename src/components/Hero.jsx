@@ -45,7 +45,7 @@ export default function HeroSection() {
         {/* ── LEFT — BIG HERO WITH VIDEO ── */}
         <div
           className="relative lg:col-span-2 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
-          data-aos="fade-right"
+          data-aos="fade-down"
         >
           <video
             src="/vedio.mp4"
@@ -114,7 +114,7 @@ export default function HeroSection() {
               key={index}
               href={`#${item.id}`}
               onClick={(e) => scrollToSection(e, item.id)}
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay={index * 200}
               className="group relative rounded-2xl overflow-hidden h-48 md:h-56 cursor-pointer border border-white/5"
             >
